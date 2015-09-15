@@ -5,7 +5,7 @@ public class Ship : MonoBehaviour {
 
 	private const float LANE_WIDTH = 2.3f;
 	private int direction = 0;
-	private float turnSpeed = 3.4f;
+	private float turnSpeed = 1.4f;
 	private Vector3 lastPosition;
 	private float previousRotation = 0;
 
