@@ -23,12 +23,18 @@ public class Game : MonoBehaviour {
 
 	private int highestScore;
 	private int totalScore;//sum of all games
+	private ObstacleLevel currentObstacle = null;
 
 
 	private int currentLevel = 0;
 	public int CurrentLevel {
 		get { return currentLevel; }
 		private set { currentLevel = value; }
+	}
+
+	public bool GameInProgress {
+		get {return gameInProgress;}
+		set {gameInProgress = value;}
 	}
 
 	void Start() {
@@ -65,13 +71,21 @@ public class Game : MonoBehaviour {
 		CurrentLevel = 0;
 		gameInProgress = true;
 		menuState = MenuState.IN_GAME;
+		if (currentObstacle != null) {
+			currentObstacle.ForceExit();
+		}
+		NextObstacle ();
 	}
 	
 	public void NextLevel() {
 		//TODO: Implement next level
 	}
 
-	public void GameOver() {
+	public void NextObstacle() {
+		currentObstacle = ObstacleLevel.ActivateRandomObstacle (1, 5);
+	}
+
+	public void SetGameOver() {
 		gameInProgress = false;
 		menuState = MenuState.GAME_OVER;
 
@@ -108,6 +122,9 @@ public class Game : MonoBehaviour {
 
 	public void ShowMenu() {
 		menuState = MenuState.MAIN_MENU;
+		if (currentObstacle != null) {
+			currentObstacle.ForceExit();
+		}
 	}
 
 	public void ShowSettings() {

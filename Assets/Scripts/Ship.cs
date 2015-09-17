@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Ship : MonoBehaviour {
 
+	[SerializeField] Game game = null;
 	private const float LANE_WIDTH = 2.3f;
 	private int direction = 0;
 	private float turnSpeed = 1.4f;
@@ -61,5 +62,9 @@ public class Ship : MonoBehaviour {
 	/// <param name="_dir">_dir.</param>
 	public void SetDirection(int _dir) {
 		direction = _dir;
+	}
+
+	public void TakeHit () {
+		game.SetGameOver ();
 	}
 }
