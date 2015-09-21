@@ -9,28 +9,23 @@ public class Ship : MonoBehaviour {
 	private float turnSpeed = 1.4f;
 	private Vector3 lastPosition;
 	private float previousRotation = 0;
+	private bool isDead = false;
+	private ParticleSystem[] particles = null;
+
+	void Start() {
+		particles = GetComponentsInChildren<ParticleSystem> ();
+	}
 
 	void Update() {
+
+		if (isDead) {
+			return;
+		}
 
 		float maxLaneWidth = LANE_WIDTH;
 		float minLaneWidth = -LANE_WIDTH;
 
 		float moveTarget = direction * LANE_WIDTH;
-
-/*
-		if (direction == 0) {
-			moveTarget = 0;
-
-			if(transform.position.x > 0) {
-				direction = -1;
-				minLaneWidth = 0;
-			}
-			else if (transform.position.x < 0) {
-				direction = 1;
-				maxLaneWidth = 0;
-			}
-		}
-*/
 
 		float distanceToTarget = Mathf.Abs (transform.position.x - moveTarget);
 		float ease = 1;
@@ -53,6 +48,20 @@ public class Ship : MonoBehaviour {
 		rotation = Mathf.Lerp (previousRotation, rotation, 0.2f);
 		previousRotation = rotation;
 		transform.rotation = Quaternion.Euler (new Vector3 (0,0,rotation));
+	}
+
+	public void Die() {
+		isDead = true;
+		foreach (ParticleSystem p in particles) {
+			p.Stop();
+		}
+	}
+
+	public void Live() {
+		isDead = false;
+		foreach (ParticleSystem p in particles) {
+			p.Play();
+		}
 	}
 
 	/// <summary>

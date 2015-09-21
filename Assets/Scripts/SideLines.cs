@@ -4,7 +4,8 @@ using System.Collections;
 public class SideLines : MonoBehaviour {
 	public float speed = 0;
 	private Animator anim = null;
-	void Start () {
+
+	void Awake () {
 		anim = GetComponent<Animator> ();
 	}
 

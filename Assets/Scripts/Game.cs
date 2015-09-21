@@ -18,7 +18,9 @@ public class Game : MonoBehaviour {
 	private MenuState menuState = MenuState.OFF;
 
 	[SerializeField] private Menu menu = null;
+	[SerializeField] private Ship ship = null;
 	[SerializeField] private SideLines sideLine = null;
+	[SerializeField] private Text nauticMilesText = null;
 
 	private bool gameInProgress = false;
 	private int highestScore;
@@ -26,6 +28,7 @@ public class Game : MonoBehaviour {
 	private ObstacleLevel currentObstacle = null;
 	private int currentLevel = 0;
 	private float currentSpeed = 4;
+	private float currentMiles = 0;
 
 	public int CurrentLevel {
 		get { return currentLevel; }
@@ -55,6 +58,11 @@ public class Game : MonoBehaviour {
 
 		menu.SetAnimationState ((int)menuState);
 
+		if (gameInProgress) {
+			currentMiles += Time.deltaTime * currentSpeed * 0.5f;
+			nauticMilesText.text = currentMiles.ToString ("N0");
+		}
+
 		if (Input.GetKeyDown (KeyCode.G)) {
 			NextLevel();
 		}
@@ -74,6 +82,8 @@ public class Game : MonoBehaviour {
 		if (currentObstacle != null) {
 			currentObstacle.ForceExit();
 		}
+		currentMiles = 0;
+		ship.Live ();
 		NextLevel ();
 	}
 	
@@ -89,11 +99,13 @@ public class Game : MonoBehaviour {
 
 	public void SetGameOver() {
 		StopMovement ();
+
 		gameInProgress = false;
 		menuState = MenuState.GAME_OVER;
+		ship.Die ();
 
-		if (currentLevel > highestScore) {
-			highestScore = currentLevel;
+		if (currentMiles > highestScore) {
+			highestScore = (int)currentMiles;
 			PlayerPrefs.SetInt("highest_score", highestScore);
 			menu.ActivateHighScore();
 		}
@@ -118,13 +130,14 @@ public class Game : MonoBehaviour {
 		menu.UpdateMedalsText ();
 		
 		menu.SetHighScore (highestScore);
-		menu.SetCurrentScore (currentLevel);
-		totalScore += currentLevel;
+		menu.SetCurrentScore ((int)currentMiles);
+		totalScore += (int)currentMiles;
 		PlayerPrefs.SetInt ("total_score", totalScore);
 	}
 
 	public void ShowMenu() {
 		StartMovement ();
+		ship.Live ();
 		menuState = MenuState.MAIN_MENU;
 		if (currentObstacle != null) {
 			currentObstacle.ForceExit();
