@@ -18,15 +18,15 @@ public class Game : MonoBehaviour {
 	private MenuState menuState = MenuState.OFF;
 
 	[SerializeField] private Menu menu = null;
+	[SerializeField] private SideLines sideLine = null;
 
 	private bool gameInProgress = false;
-
 	private int highestScore;
 	private int totalScore;//sum of all games
 	private ObstacleLevel currentObstacle = null;
-
-
 	private int currentLevel = 0;
+	private float currentSpeed = 4;
+
 	public int CurrentLevel {
 		get { return currentLevel; }
 		private set { currentLevel = value; }
@@ -74,18 +74,21 @@ public class Game : MonoBehaviour {
 		if (currentObstacle != null) {
 			currentObstacle.ForceExit();
 		}
-		NextObstacle ();
+		NextLevel ();
 	}
 	
 	public void NextLevel() {
-		//TODO: Implement next level
+		CurrentLevel++;
+		StartMovement ();
+		NextObstacle ();
 	}
 
 	public void NextObstacle() {
-		currentObstacle = ObstacleLevel.ActivateRandomObstacle (1, 5);
+		currentObstacle = ObstacleLevel.ActivateRandomObstacle (currentLevel, currentSpeed);
 	}
 
 	public void SetGameOver() {
+		StopMovement ();
 		gameInProgress = false;
 		menuState = MenuState.GAME_OVER;
 
@@ -121,6 +124,7 @@ public class Game : MonoBehaviour {
 	}
 
 	public void ShowMenu() {
+		StartMovement ();
 		menuState = MenuState.MAIN_MENU;
 		if (currentObstacle != null) {
 			currentObstacle.ForceExit();
@@ -133,5 +137,15 @@ public class Game : MonoBehaviour {
 
 	public void ShowMedals() {
 		menuState = MenuState.MEDALS;
+	}
+
+	private void StartMovement() {
+		sideLine.SetSpeed (currentSpeed - 1);
+		Wave.Speed = currentSpeed;
+	}
+
+	private void StopMovement() {
+		sideLine.SetSpeed (0);
+		Wave.Speed = 0;
 	}
 }

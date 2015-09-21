@@ -46,13 +46,12 @@ public class ObstacleLevel : MonoBehaviour {
 
 		transform.position = new Vector3 (
 			transform.position.x,
-			transform.position.y + -speed * Time.deltaTime,
+			transform.position.y - speed * Time.deltaTime,
 			transform.position.z
 		);
 	}
 
 	void OnTriggerEnter2D(Collider2D _other) {
-		Debug.Log (_other);
 		if (_other.tag == "ship") {
 			staticGame.NextObstacle();
 			Exit();
@@ -82,12 +81,10 @@ public class ObstacleLevel : MonoBehaviour {
 	/// Initializes a new instance of the <see cref="ObstacleLevel"/> class.
 	/// </summary>
 	public void Exit() {
-		Debug.Log (1);
 		StartCoroutine (EExit ());
 	}
 
 	private IEnumerator EExit() {
-		Debug.Log (2);
 		yield return new WaitForSeconds(2);
 		ForceExit ();
 	}

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7210f3e781a45438b8bf54ea239fffc3
-timeCreated: 1442202383
+timeCreated: 1442641867
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -62,91 +62,31 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 88
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: boat_4
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 74
-        width: 31
-        height: 25
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: boat_3
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 80
-        width: 16
-        height: 19
+        y: 85
+        width: 13
+        height: 14
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sale_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 93
-        width: 31
-        height: 6
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 15
+        y: 95
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: sale_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 87
-        width: 31
-        height: 5
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sale_3
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 81
-        width: 19
-        height: 5
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sale_4
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 76
-        width: 19
-        height: 4
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: boat_5
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 45
-        width: 31
-        height: 28
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: boat_2
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 57
-        width: 7
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 15
+        y: 91
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

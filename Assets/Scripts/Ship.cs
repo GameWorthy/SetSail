@@ -17,7 +17,7 @@ public class Ship : MonoBehaviour {
 
 		float moveTarget = direction * LANE_WIDTH;
 
-
+/*
 		if (direction == 0) {
 			moveTarget = 0;
 
@@ -30,6 +30,7 @@ public class Ship : MonoBehaviour {
 				maxLaneWidth = 0;
 			}
 		}
+*/
 
 		float distanceToTarget = Mathf.Abs (transform.position.x - moveTarget);
 		float ease = 1;
@@ -48,7 +49,7 @@ public class Ship : MonoBehaviour {
 			transform.position.y,
 			transform.position.z);
 
-		float rotation = (lastPosition.x - xPos) * 100;
+		float rotation = (lastPosition.x - xPos) * 200;
 		rotation = Mathf.Lerp (previousRotation, rotation, 0.2f);
 		previousRotation = rotation;
 		transform.rotation = Quaternion.Euler (new Vector3 (0,0,rotation));
