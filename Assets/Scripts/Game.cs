@@ -21,6 +21,7 @@ public class Game : MonoBehaviour {
 	[SerializeField] private Ship ship = null;
 	[SerializeField] private SideLines sideLine = null;
 	[SerializeField] private Text nauticMilesText = null;
+	[SerializeField] SpriteRenderer seaSprite = null;
 
 	private bool gameInProgress = false;
 	private int highestScore;
@@ -89,12 +90,21 @@ public class Game : MonoBehaviour {
 	
 	public void NextLevel() {
 		CurrentLevel++;
+		currentSpeed = LevelMetadata.GetLevelSpeed(CurrentLevel);
+		ColorSea(LevelMetadata.GetLevelSeaColor(CurrentLevel));
 		StartMovement ();
 		NextObstacle ();
 	}
 
 	public void NextObstacle() {
-		currentObstacle = ObstacleLevel.ActivateRandomObstacle (currentLevel, currentSpeed);
+		int milestone = LevelMetadata.GetLevelMilestone (currentLevel);
+		if (currentMiles >= milestone) {
+			if(milestone >= 0) {
+				NextLevel();
+				return;
+			}
+		}
+			currentObstacle = ObstacleLevel.ActivateRandomObstacle (currentLevel, currentSpeed);
 	}
 
 	public void SetGameOver() {
@@ -138,6 +148,7 @@ public class Game : MonoBehaviour {
 	public void ShowMenu() {
 		StartMovement ();
 		ship.Live ();
+		ColorSea (LevelMetadata.GetLevelSeaColor(1));
 		menuState = MenuState.MAIN_MENU;
 		if (currentObstacle != null) {
 			currentObstacle.ForceExit();
@@ -160,5 +171,9 @@ public class Game : MonoBehaviour {
 	private void StopMovement() {
 		sideLine.SetSpeed (0);
 		Wave.Speed = 0;
+	}
+
+	private void ColorSea(Color _color) {
+		seaSprite.color = _color;
 	}
 }

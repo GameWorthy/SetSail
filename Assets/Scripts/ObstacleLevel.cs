@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ObstacleLevel : MonoBehaviour {
 
-	private static List<ObstacleLevel> obstacleLeves = new List<ObstacleLevel>();
+	private static List<ObstacleLevel>[] obstacleLevels = new List<ObstacleLevel>[10];
 	private static Game staticGame = null;
 
 	[SerializeField] private int showInLevel = 1;
@@ -31,7 +31,10 @@ public class ObstacleLevel : MonoBehaviour {
 
 	void Start () {
 		startingPos = transform.position;
-		obstacleLeves.Add (this);
+		if (obstacleLevels [showInLevel] == null) {
+			obstacleLevels [showInLevel] = new List<ObstacleLevel>();
+		}
+		obstacleLevels[showInLevel].Add (this);
 		//As long as there is reference to game, we should be fine
 		if (game != null) {
 			staticGame = game;
@@ -59,9 +62,10 @@ public class ObstacleLevel : MonoBehaviour {
 	}
 
 	public static ObstacleLevel ActivateRandomObstacle(int _level, float _speed) {
-		ObstacleLevel os = obstacleLeves [Random.Range (0, obstacleLeves.Count)];
+		List<ObstacleLevel> osList = obstacleLevels [_level];
+		ObstacleLevel os = osList[Random.Range (0, osList.Count)];
 		while (os.IsInLevel) {
-			os = obstacleLeves[Random.Range(0,obstacleLeves.Count)];
+			os = osList[Random.Range(0,osList.Count)];
 		}
 		os.Enter (_speed);
 		return os;
