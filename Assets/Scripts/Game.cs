@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using GameWorthy;
@@ -24,8 +25,7 @@ public class Game : MonoBehaviour {
 	[SerializeField] SpriteRenderer seaSprite = null;
 
 	private bool gameInProgress = false;
-	private int highestScore;
-	private int totalScore;//sum of all games
+	private GameData gameData = null;
 	private ObstacleLevel currentObstacle = null;
 	private int currentLevel = 0;
 	private float currentSpeed = 4;
@@ -42,10 +42,13 @@ public class Game : MonoBehaviour {
 	}
 
 	void Start() {
-		//TODO:Create a saver class to deal with encryption saving data
-		highestScore = PlayerPrefs.GetInt ("highest_score",0);
-		totalScore = PlayerPrefs.GetInt ("total_score",0);
+		MemoryCard.Initiate ();
 
+		gameData = (GameData) MemoryCard.Load ("game");
+
+		if (gameData == null) {
+			gameData = new GameData();
+		}
 
 		Screen.orientation = ScreenOrientation.Portrait;
 		menuState = MenuState.MAIN_MENU;
@@ -53,6 +56,7 @@ public class Game : MonoBehaviour {
 
 		MedalSystem.Initiate ();
 		menu.UpdateMedalsText ();
+
 	}
 
 	void Update() {
@@ -69,7 +73,7 @@ public class Game : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown (KeyCode.R)) {
-			highestScore = 0;
+			gameData.highScore = 0;
 		}
 	}
 
@@ -114,23 +118,22 @@ public class Game : MonoBehaviour {
 		menuState = MenuState.GAME_OVER;
 		ship.Die ();
 
-		if (currentMiles > highestScore) {
-			highestScore = (int)currentMiles;
-			PlayerPrefs.SetInt("highest_score", highestScore);
+		if (currentMiles > gameData.highScore) {
+			gameData.highScore = (int)currentMiles;
 			menu.ActivateHighScore();
 		}
 		
 		//give medals
-		if (currentLevel >= 45) {
+		if (currentMiles >= 320) {
 			MedalSystem.TotalPlatinum++;
 			menu.SetMedalColor (new Color(203f/255f,251f/255f,1,1));
-		} else if (currentLevel >= 30) {
+		} else if (currentMiles >= 180) {
 			MedalSystem.TotalGold++;
 			menu.SetMedalColor (new Color(1,237f/255f,0,1));
-		} else if (currentLevel >= 18) {
+		} else if (currentMiles >= 100) {
 			MedalSystem.TotalSilver++;
 			menu.SetMedalColor (new Color(203f/255f,203f/255f,203f/255f,1));
-		} else if (currentLevel >= 6) {
+		} else if (currentMiles >= 45) {
 			MedalSystem.TotalBronze++;
 			menu.SetMedalColor (new Color(218f/255f,103f/255f,0f,1));
 		} else {
@@ -139,10 +142,11 @@ public class Game : MonoBehaviour {
 		
 		menu.UpdateMedalsText ();
 		
-		menu.SetHighScore (highestScore);
+		menu.SetHighScore (gameData.highScore);
 		menu.SetCurrentScore ((int)currentMiles);
-		totalScore += (int)currentMiles;
-		PlayerPrefs.SetInt ("total_score", totalScore);
+		gameData.totalMiles += (int)currentMiles;
+
+		MemoryCard.Save (gameData, "game");
 	}
 
 	public void ShowMenu() {
@@ -177,3 +181,11 @@ public class Game : MonoBehaviour {
 		seaSprite.color = _color;
 	}
 }
+
+[Serializable]
+public class GameData {
+	public int highScore = 0;
+	public double totalMiles = 0;
+	public int coins = 0;
+}
+

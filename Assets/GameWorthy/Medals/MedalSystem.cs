@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 
 namespace GameWorthy {
 
@@ -57,13 +55,11 @@ namespace GameWorthy {
 		/// Reads and sets saved medals
 		/// </summary>
 		public static void Initiate() {
-			Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
+			MemoryCard.Initiate ();
 			Load ();
 		}
 
-			private static void Save() {
-			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Create (Application.persistentDataPath + "/medals.dat");
+		private static void Save() {
 
 			Medals medals = new Medals ();
 			medals.bronzes = totalBronze;
@@ -72,18 +68,14 @@ namespace GameWorthy {
 			medals.platinum = totalPlatinum;
 			medals.obsidiam = totalObsidiam;
 
-			bf.Serialize (file, medals);
-			file.Close ();
+			MemoryCard.Save (medals,"medals");
 		}
 
 		private static void Load() {
-			//File.Delete (Application.persistentDataPath + "/medals.dat");
-			if (File.Exists (Application.persistentDataPath + "/medals.dat")) {
-				BinaryFormatter bf = new BinaryFormatter();
-				FileStream file = File.Open(Application.persistentDataPath + "/medals.dat", FileMode.Open);
-				Medals medals = (Medals) bf.Deserialize(file);
-				file.Close();
 
+			Medals medals = (Medals) MemoryCard.Load("medals");
+
+			if(medals != null) {	
 				totalBronze = medals.bronzes;
 				totalSilver = medals.silvers;
 				totalGold = medals.golds;
