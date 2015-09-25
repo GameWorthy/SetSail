@@ -5,7 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using GameWorthy;
 
-
 public class Game : MonoBehaviour {
 	private enum MenuState	{
 		OFF,
@@ -18,18 +17,21 @@ public class Game : MonoBehaviour {
 
 	private MenuState menuState = MenuState.OFF;
 
+
 	[SerializeField] private Menu menu = null;
 	[SerializeField] private Ship ship = null;
 	[SerializeField] private SideLines sideLine = null;
 	[SerializeField] private Text nauticMilesText = null;
+	[SerializeField] private CoinUI coinUi = null;
 	[SerializeField] SpriteRenderer seaSprite = null;
-
 	private bool gameInProgress = false;
-	private GameData gameData = null;
 	private ObstacleLevel currentObstacle = null;
 	private int currentLevel = 0;
 	private float currentSpeed = 4;
 	private float currentMiles = 0;
+	private GameData gameData = null;
+
+	private static Game self = null;
 
 	public int CurrentLevel {
 		get { return currentLevel; }
@@ -41,7 +43,20 @@ public class Game : MonoBehaviour {
 		set {gameInProgress = value;}
 	}
 
+	public static int GameCoins {
+		get { return self.gameData.coins; }
+		set { 
+			self.gameData.coins = value;
+			self.coinUi.UpdateText(self.gameData.coins);
+		}
+	}
+
 	void Start() {
+
+		if (self == null) {
+			self = this;
+		}
+
 		MemoryCard.Initiate ();
 
 		gameData = (GameData) MemoryCard.Load ("game");
@@ -56,6 +71,8 @@ public class Game : MonoBehaviour {
 
 		MedalSystem.Initiate ();
 		menu.UpdateMedalsText ();
+
+		coinUi.UpdateText (gameData.coins);
 
 	}
 
@@ -108,7 +125,11 @@ public class Game : MonoBehaviour {
 				return;
 			}
 		}
-			currentObstacle = ObstacleLevel.ActivateRandomObstacle (currentLevel, currentSpeed);
+		if(currentObstacle != null) {
+			currentObstacle.OnLevelExit ();	
+		}
+		currentObstacle = ObstacleLevel.ActivateRandomObstacle (currentLevel, currentSpeed);
+		currentObstacle.OnLevelEnter();
 	}
 
 	public void SetGameOver() {
@@ -141,6 +162,7 @@ public class Game : MonoBehaviour {
 		}
 		
 		menu.UpdateMedalsText ();
+		GameCoins += (int)currentMiles / 2;
 		
 		menu.SetHighScore (gameData.highScore);
 		menu.SetCurrentScore ((int)currentMiles);

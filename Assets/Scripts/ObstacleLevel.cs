@@ -13,6 +13,7 @@ public class ObstacleLevel : MonoBehaviour {
 	private float speed = 0f;
 	private bool isInLevel = false;
 	private Vector3 startingPos = Vector3.zero;
+	private List<Coin> coins = new List<Coin> ();
 
 	public int ShowInLevel {
 		get { return showInLevel; }
@@ -27,6 +28,10 @@ public class ObstacleLevel : MonoBehaviour {
 	public bool IsInLevel {
 		get { return isInLevel; }
 		set { isInLevel = value; }
+	}
+
+	public void AddCoin(Coin _coin) {
+		coins.Add (_coin);
 	}
 
 	void Start () {
@@ -97,6 +102,20 @@ public class ObstacleLevel : MonoBehaviour {
 		Speed = 0;
 		IsInLevel = false;
 		transform.position = startingPos;
+	}
+
+	public void OnLevelEnter() {
+		ActivateCoins ();
+	}
+
+	public void OnLevelExit() {
+
+	}
+
+	private void ActivateCoins() {
+		foreach (Coin c in coins) {
+			c.On ();
+		}
 	}
 }
 

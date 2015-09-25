@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7210f3e781a45438b8bf54ea239fffc3
-timeCreated: 1442641867
+timeCreated: 1443164972
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,6 +13,8 @@ TextureImporter:
     21300012: sale_4
     21300014: boat_5
     21300016: boat_2
+    21300018: coin
+    21300020: plus_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -46,6 +48,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -87,6 +90,26 @@ TextureImporter:
         height: 3
       alignment: 7
       pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: coin
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 95
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plus_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 94
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
