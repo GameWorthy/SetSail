@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7210f3e781a45438b8bf54ea239fffc3
-timeCreated: 1443164972
+timeCreated: 1443336116
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -15,6 +15,12 @@ TextureImporter:
     21300016: boat_2
     21300018: coin
     21300020: plus_1
+    21300022: chicken_wing_0
+    21300024: chicken_wing_1
+    21300026: chicken_wing_2
+    21300028: chicken_wing_3
+    21300030: skull
+    21300032: helm
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -108,6 +114,66 @@ TextureImporter:
         y: 94
         width: 7
         height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chicken_wing_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 86
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chicken_wing_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 86
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chicken_wing_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 86
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chicken_wing_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 86
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: skull
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 73
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: helm
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 71
+        width: 13
+        height: 13
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

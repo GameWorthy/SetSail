@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9609710cfbb5b4c4c962aec6bac0f4cc
-timeCreated: 1442198697
+timeCreated: 1443332430
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -34,6 +34,7 @@ TextureImporter:
     21300054: white
     21300056: medal_tag
     21300058: sock_medal
+    21300060: UI_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -67,6 +68,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -238,7 +240,7 @@ TextureImporter:
         height: 13
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 1, z: 0, w: 1}
     - name: star_record
       rect:
         serializedVersion: 2
@@ -276,6 +278,16 @@ TextureImporter:
         y: 85
         width: 27
         height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 146
+        width: 1
+        height: 1
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

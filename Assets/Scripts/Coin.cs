@@ -14,8 +14,6 @@ public class Coin : MonoBehaviour {
 	void Start () {
 		col = GetComponent<Collider2D> ();
 		On ();
-
-
 	}
 
 	public void On() {
