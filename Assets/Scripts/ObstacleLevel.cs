@@ -13,7 +13,7 @@ public class ObstacleLevel : MonoBehaviour {
 	private float speed = 0f;
 	private bool isInLevel = false;
 	private Vector3 startingPos = Vector3.zero;
-	private List<Coin> coins = new List<Coin> ();
+	private List<Pickup> pickups = new List<Pickup> ();
 
 	public int ShowInLevel {
 		get { return showInLevel; }
@@ -30,8 +30,8 @@ public class ObstacleLevel : MonoBehaviour {
 		set { isInLevel = value; }
 	}
 
-	public void AddCoin(Coin _coin) {
-		coins.Add (_coin);
+	public void AddPickup(Pickup _pickup) {
+		pickups.Add (_pickup);
 	}
 
 	void Start () {
@@ -113,8 +113,8 @@ public class ObstacleLevel : MonoBehaviour {
 	}
 
 	private void ActivateCoins() {
-		foreach (Coin c in coins) {
-			c.On ();
+		foreach (Pickup p in pickups) {
+			p.Reset ();
 		}
 	}
 }

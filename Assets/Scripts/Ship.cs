@@ -4,9 +4,11 @@ using System.Collections;
 public class Ship : MonoBehaviour {
 
 	[SerializeField] Game game = null;
+	[SerializeField] Fuel fuel = null;
 	private const float LANE_WIDTH = 2.3f;
 	private int direction = 0;
 	private float turnSpeed = 1.4f;
+	private float fuelConsuptionRate = 3;
 	private Vector3 lastPosition;
 	private float previousRotation = 0;
 	private bool isDead = false;
@@ -48,6 +50,14 @@ public class Ship : MonoBehaviour {
 		rotation = Mathf.Lerp (previousRotation, rotation, 0.2f);
 		previousRotation = rotation;
 		transform.rotation = Quaternion.Euler (new Vector3 (0,0,rotation));
+
+
+		if (game.GameInProgress) {
+			fuel.Percentage -= Time.deltaTime * fuelConsuptionRate;
+			if(fuel.Percentage <= 0) {
+				game.SetGameOver();
+			}
+		}
 	}
 
 	public void Die() {
@@ -59,9 +69,14 @@ public class Ship : MonoBehaviour {
 
 	public void Live() {
 		isDead = false;
+		fuel.Percentage = 100;
 		foreach (ParticleSystem p in particles) {
 			p.Play();
 		}
+	}
+
+	public void Refuel(float _percentage) {
+		fuel.Percentage += _percentage;
 	}
 
 	/// <summary>
