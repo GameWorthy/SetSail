@@ -18,7 +18,6 @@ public class Coin : MonoBehaviour {
 
 	public void On() {
 		col.enabled = true;
-		coin.color = Color.white;
 		plus.transform.localPosition = Vector3.zero;
 		plus.color = new Color (1, 1, 1, 0);
 	}
