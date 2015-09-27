@@ -47,15 +47,29 @@ public class Game : MonoBehaviour {
 		get { return self.gameData.coins; }
 		set { 
 			self.gameData.coins = value;
+			Debug.Log(self.gameData.coins);
 			self.coinUi.UpdateText(self.gameData.coins);
 		}
 	}
 
-	void Start() {
+	public static int GetRandomCoinValue() {
+		switch (self.CurrentLevel) {
+		case 1:
+			return 1;
+		case 2:
+			return UnityEngine.Random.Range(1,3);
+		}
 
+		return UnityEngine.Random.Range (1, 4);
+	}
+
+	void Awake() {
 		if (self == null) {
 			self = this;
 		}
+	}
+
+	void Start() {
 
 		MemoryCard.Initiate ();
 

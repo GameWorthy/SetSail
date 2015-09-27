@@ -7,8 +7,8 @@ public class Ship : MonoBehaviour {
 	[SerializeField] Fuel fuel = null;
 	private const float LANE_WIDTH = 2.3f;
 	private int direction = 0;
-	private float turnSpeed = 1.4f;
-	private float fuelConsuptionRate = 3;
+	private float turnSpeed = 3.4f;
+	private float fuelConsuptionRate = 0.3f;
 	private Vector3 lastPosition;
 	private float previousRotation = 0;
 	private bool isDead = false;

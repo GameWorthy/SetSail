@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7210f3e781a45438b8bf54ea239fffc3
-timeCreated: 1443336116
+timeCreated: 1443345085
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -21,6 +21,8 @@ TextureImporter:
     21300028: chicken_wing_3
     21300030: skull
     21300032: helm
+    21300034: plus_2
+    21300036: plus_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -160,7 +162,7 @@ TextureImporter:
     - name: skull
       rect:
         serializedVersion: 2
-        x: 41
+        x: 42
         y: 73
         width: 12
         height: 11
@@ -174,6 +176,26 @@ TextureImporter:
         y: 71
         width: 13
         height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plus_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 88
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plus_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 82
+        width: 7
+        height: 5
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

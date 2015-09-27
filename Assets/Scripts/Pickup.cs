@@ -18,7 +18,7 @@ public class Pickup : MonoBehaviour {
 
 	void Start () {
 		col = GetComponent<Collider2D> ();
-		On ();
+		LookForParent ();
 	}
 
 	void OnTriggerEnter2D(Collider2D _other) {

@@ -105,14 +105,14 @@ public class ObstacleLevel : MonoBehaviour {
 	}
 
 	public void OnLevelEnter() {
-		ActivateCoins ();
+		ActivatePickups ();
 	}
 
 	public void OnLevelExit() {
 
 	}
 
-	private void ActivateCoins() {
+	private void ActivatePickups() {
 		foreach (Pickup p in pickups) {
 			p.Reset ();
 		}
