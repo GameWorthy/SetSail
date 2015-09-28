@@ -21,6 +21,5 @@ public class SideLines : MonoBehaviour {
 			y,
 			transform.position.z
 			);
-
 	}
 }

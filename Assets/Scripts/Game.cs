@@ -19,7 +19,6 @@ public class Game : MonoBehaviour {
 	
 	[SerializeField] private Menu menu = null;
 	[SerializeField] private Ship ship = null;
-	[SerializeField] private SideLines sideLine = null;
 	[SerializeField] private Text nauticMilesText = null;
 	[SerializeField] private CoinUI coinUi = null;
 	[SerializeField] SpriteRenderer seaSprite = null;
@@ -118,6 +117,7 @@ public class Game : MonoBehaviour {
 		}
 		currentMiles = 0;
 		ship.Live ();
+		ship.GoDown ();
 		NextLevel ();
 	}
 	
@@ -186,6 +186,7 @@ public class Game : MonoBehaviour {
 	public void ShowMenu() {
 		StartMovement ();
 		ship.Live ();
+		ship.GoUp ();
 		ColorSea (LevelMetadata.GetLevelSeaColor(1));
 		menuState = MenuState.MAIN_MENU;
 		if (currentObstacle != null) {

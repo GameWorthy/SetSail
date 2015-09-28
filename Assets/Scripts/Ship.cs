@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using DG.Tweening;
 
 public class Ship : MonoBehaviour {
 
@@ -37,7 +38,6 @@ public class Ship : MonoBehaviour {
 		}
 
 		float xPos = transform.position.x + (direction * Time.deltaTime * turnSpeed * ease);
-
 		xPos = Mathf.Clamp (xPos, minLaneWidth, maxLaneWidth);
 
 		lastPosition = transform.position;
@@ -74,7 +74,14 @@ public class Ship : MonoBehaviour {
 		foreach (ParticleSystem p in particles) {
 			p.Play();
 		}
+	}
 
+	public void GoUp() {
+		transform.DOMove (new Vector3 (transform.position.x, 0, transform.position.z), 1f);
+	}
+
+	public void GoDown() {
+		transform.DOMove (new Vector3 (transform.position.x, -3, transform.position.z), 1f);
 	}
 
 	public void Refuel(float _percentage) {
