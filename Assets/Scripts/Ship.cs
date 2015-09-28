@@ -16,6 +16,16 @@ public class Ship : MonoBehaviour {
 	private bool isDead = false;
 	private ParticleSystem[] particles = null;
 
+	public float TurnSpeed {
+		get{return turnSpeed;}
+		set {turnSpeed = value;}
+	}
+
+	public float FuelRate {
+		get {return fuelConsuptionRate;}
+		set {fuelConsuptionRate = value;}
+	}
+
 	void Start() {
 		particles = GetComponentsInChildren<ParticleSystem> ();
 	}

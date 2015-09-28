@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
@@ -50,14 +50,16 @@ public class Game : MonoBehaviour {
 	}
 
 	public static int GetRandomCoinValue() {
-		switch (self.CurrentLevel) {
-		case 1:
-			return 1;
-		case 2:
-			return UnityEngine.Random.Range(1,3);
+		int total = 1;
+
+		if (self.currentLevel >= UpgradesDB.GetTrippeCoinLevel (self.gameData.coinLevel)) {
+			total = 3;
+		}
+		else if(self.currentLevel >= UpgradesDB.GetDoubleCoinLevel (self.gameData.coinLevel)) {
+			total = 2;
 		}
 
-		return UnityEngine.Random.Range (1, 4);
+		return UnityEngine.Random.Range (1, total + 1);
 	}
 
 	void Awake() {
@@ -84,6 +86,7 @@ public class Game : MonoBehaviour {
 		menu.UpdateMedalsText ();
 
 		coinUi.UpdateText (gameData.coins);
+		SetShipUpgradeStats ();
 
 	}
 
@@ -99,9 +102,46 @@ public class Game : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.G)) {
 			NextLevel();
 		}
-
+		
 		if (Input.GetKeyDown (KeyCode.R)) {
 			gameData.highScore = 0;
+			gameData.coinLevel = 0;
+			gameData.foodLevel = 0;
+			gameData.turnLevel = 0;
+			GameCoins = 0;
+			SetShipUpgradeStats();
+		}
+
+		
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			gameData.coinLevel = 1;
+			gameData.foodLevel = 1;
+			gameData.turnLevel = 1;
+			SetShipUpgradeStats();
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			gameData.coinLevel = 2;
+			gameData.foodLevel = 2;
+			gameData.turnLevel = 2;
+			SetShipUpgradeStats();
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha3)) {
+			gameData.coinLevel = 3;
+			gameData.foodLevel = 3;
+			gameData.turnLevel = 3;
+			SetShipUpgradeStats();
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha4)) {
+			gameData.coinLevel = 4;
+			gameData.foodLevel = 4;
+			gameData.turnLevel = 4;
+			SetShipUpgradeStats();
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha5)) {
+			gameData.coinLevel = 5;
+			gameData.foodLevel = 5;
+			gameData.turnLevel = 5;
+			SetShipUpgradeStats();
 		}
 	}
 
@@ -194,6 +234,11 @@ public class Game : MonoBehaviour {
 		}
 	}
 
+	public void SetShipUpgradeStats() {
+		ship.TurnSpeed = UpgradesDB.GetTurnValue(gameData.turnLevel);
+		ship.FuelRate = UpgradesDB.GetFoodValue(gameData.foodLevel);
+	}
+
 	public void ShowSettings() {
 		menuState = MenuState.SETTINGS;
 	}
@@ -222,5 +267,8 @@ public class GameData {
 	public int highScore = 0;
 	public double totalMiles = 0;
 	public int coins = 0;
+	public int turnLevel = 0;
+	public int foodLevel = 0;
+	public int coinLevel = 0;
 }
 
