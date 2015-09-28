@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Wave : MonoBehaviour {
 
-	private static float speed = 4;
+	private static float speed = 0;
 	public static float Speed {
 		get {return speed;}
 		set {speed = value;}

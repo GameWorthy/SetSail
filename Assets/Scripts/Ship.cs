@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public class Ship : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class Ship : MonoBehaviour {
 	private const float LANE_WIDTH = 2.3f;
 	private int direction = 0;
 	private float turnSpeed = 3.4f;
-	private float fuelConsuptionRate = 0.3f;
+	private float fuelConsuptionRate = 3f;
 	private Vector3 lastPosition;
 	private float previousRotation = 0;
 	private bool isDead = false;
@@ -52,7 +53,7 @@ public class Ship : MonoBehaviour {
 		transform.rotation = Quaternion.Euler (new Vector3 (0,0,rotation));
 
 
-		if (game.GameInProgress) {
+		if (Game.GameInProgress) {
 			fuel.Percentage -= Time.deltaTime * fuelConsuptionRate;
 			if(fuel.Percentage <= 0) {
 				game.SetGameOver();
@@ -73,6 +74,7 @@ public class Ship : MonoBehaviour {
 		foreach (ParticleSystem p in particles) {
 			p.Play();
 		}
+
 	}
 
 	public void Refuel(float _percentage) {

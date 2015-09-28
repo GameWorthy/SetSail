@@ -16,8 +16,7 @@ public class Game : MonoBehaviour {
 	}
 
 	private MenuState menuState = MenuState.OFF;
-
-
+	
 	[SerializeField] private Menu menu = null;
 	[SerializeField] private Ship ship = null;
 	[SerializeField] private SideLines sideLine = null;
@@ -38,16 +37,15 @@ public class Game : MonoBehaviour {
 		private set { currentLevel = value; }
 	}
 
-	public bool GameInProgress {
-		get {return gameInProgress;}
-		set {gameInProgress = value;}
+	public static bool GameInProgress {
+		get {return self.gameInProgress;}
+		set {self.gameInProgress = value;}
 	}
 
 	public static int GameCoins {
 		get { return self.gameData.coins; }
 		set { 
 			self.gameData.coins = value;
-			Debug.Log(self.gameData.coins);
 			self.coinUi.UpdateText(self.gameData.coins);
 		}
 	}
@@ -204,12 +202,12 @@ public class Game : MonoBehaviour {
 	}
 
 	private void StartMovement() {
-		sideLine.SetSpeed (currentSpeed - 1);
+		SideLines.Speed = currentSpeed;
 		Wave.Speed = currentSpeed;
 	}
 
 	private void StopMovement() {
-		sideLine.SetSpeed (0);
+		SideLines.Speed = 0;
 		Wave.Speed = 0;
 	}
 

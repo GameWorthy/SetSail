@@ -48,7 +48,7 @@ public class ObstacleLevel : MonoBehaviour {
 
 	void Update () {
 
-		if (!staticGame.GameInProgress) {
+		if (!Game.GameInProgress) {
 			return;
 		}
 
