@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: c4363d3d4e581014ba6b09c7d35d931d
+timeCreated: 1443406501
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rock_0
+    21300002: rock_1
+    21300004: rock_2
+    21300006: rock_3
+    21300008: rock_4
+    21300010: wreck_0
+    21300012: wreck_1
+    21300014: log_0
+    21300016: log_1
+    21300018: log_2
+    21300020: log_3
+    21300022: lighthouse_0
+    21300024: lighthouse_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 15
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rock_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 90
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 94
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 90
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 92
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 91
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: wreck_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 67
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: wreck_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 71
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: log_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 74
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: log_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 75
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: log_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 74
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: log_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 72
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lighthouse_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 55
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lighthouse_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 27
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

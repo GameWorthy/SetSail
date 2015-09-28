@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7210f3e781a45438b8bf54ea239fffc3
-timeCreated: 1443345085
+timeCreated: 1443406381
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -23,6 +23,15 @@ TextureImporter:
     21300032: helm
     21300034: plus_2
     21300036: plus_3
+    21300038: plus_4
+    21300040: plus_5
+    21300042: cloud_0
+    21300044: cloud_1
+    21300046: cloud_2
+    21300048: cloud_3
+    21300050: cloud_4
+    21300052: cloud_5
+    21300054: cloud_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,7 +65,6 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -72,8 +80,8 @@ TextureImporter:
     - name: boat_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 85
+        x: 0
+        y: 86
         width: 13
         height: 14
       alignment: 0
@@ -82,8 +90,8 @@ TextureImporter:
     - name: sale_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 95
+        x: 14
+        y: 96
         width: 13
         height: 4
       alignment: 7
@@ -92,8 +100,8 @@ TextureImporter:
     - name: sale_2
       rect:
         serializedVersion: 2
-        x: 15
-        y: 91
+        x: 14
+        y: 92
         width: 13
         height: 3
       alignment: 7
@@ -102,8 +110,8 @@ TextureImporter:
     - name: coin
       rect:
         serializedVersion: 2
-        x: 29
-        y: 95
+        x: 28
+        y: 96
         width: 4
         height: 4
       alignment: 0
@@ -112,8 +120,8 @@ TextureImporter:
     - name: plus_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 94
+        x: 33
+        y: 95
         width: 7
         height: 5
       alignment: 0
@@ -122,8 +130,8 @@ TextureImporter:
     - name: chicken_wing_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 86
+        x: 41
+        y: 87
         width: 13
         height: 13
       alignment: 0
@@ -132,8 +140,8 @@ TextureImporter:
     - name: chicken_wing_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 86
+        x: 54
+        y: 87
         width: 13
         height: 13
       alignment: 0
@@ -142,8 +150,8 @@ TextureImporter:
     - name: chicken_wing_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 86
+        x: 67
+        y: 87
         width: 13
         height: 13
       alignment: 0
@@ -152,8 +160,8 @@ TextureImporter:
     - name: chicken_wing_3
       rect:
         serializedVersion: 2
-        x: 81
-        y: 86
+        x: 80
+        y: 87
         width: 12
         height: 13
       alignment: 0
@@ -162,8 +170,8 @@ TextureImporter:
     - name: skull
       rect:
         serializedVersion: 2
-        x: 42
-        y: 73
+        x: 41
+        y: 74
         width: 12
         height: 11
       alignment: 0
@@ -172,8 +180,8 @@ TextureImporter:
     - name: helm
       rect:
         serializedVersion: 2
-        x: 59
-        y: 71
+        x: 58
+        y: 72
         width: 13
         height: 13
       alignment: 0
@@ -182,8 +190,8 @@ TextureImporter:
     - name: plus_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 88
+        x: 33
+        y: 89
         width: 7
         height: 5
       alignment: 0
@@ -192,10 +200,110 @@ TextureImporter:
     - name: plus_3
       rect:
         serializedVersion: 2
-        x: 34
-        y: 82
+        x: 33
+        y: 83
         width: 7
         height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plus_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 77
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plus_5
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 71
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boat_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cloud_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 49
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cloud_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 50
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cloud_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 49
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cloud_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 51
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cloud_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 36
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cloud_5
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 37
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cloud_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 84
+        height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
