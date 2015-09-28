@@ -87,11 +87,19 @@ public class Ship : MonoBehaviour {
 	}
 
 	public void GoUp() {
-		transform.DOMove (new Vector3 (transform.position.x, 0, transform.position.z), 1f);
+		float y = transform.position.y;
+		float to = 0;
+		DOTween.To (() => 0, x => y = x, to, 1f).OnUpdate (()=>{
+			transform.position = new Vector3 (transform.position.x, y, transform.position.z);
+		});
 	}
 
 	public void GoDown() {
-		transform.DOMove (new Vector3 (transform.position.x, -3, transform.position.z), 1f);
+		float y = transform.position.y;
+		float to = -3;
+		DOTween.To (() => 0, x => y = x, to, 1f).OnUpdate (()=>{
+			transform.position = new Vector3 (transform.position.x, y, transform.position.z);
+		});
 	}
 
 	public void Refuel(float _percentage) {
