@@ -6,11 +6,12 @@ public class ObstacleLevel : MonoBehaviour {
 
 	private static List<ObstacleLevel>[] obstacleLevels = new List<ObstacleLevel>[10];
 	private static Game staticGame = null;
+	private static ObstacleLevel transitionLevel = null;
 
 	[SerializeField] private int showInLevel = 1;
 	[SerializeField] Game game = null;
-
-	private float speed = 0f;
+	[SerializeField] bool isTransitionLevel = false;
+	
 	private bool isInLevel = false;
 	private Vector3 startingPos = Vector3.zero;
 	private List<Pickup> pickups = new List<Pickup> ();
@@ -18,11 +19,6 @@ public class ObstacleLevel : MonoBehaviour {
 	public int ShowInLevel {
 		get { return showInLevel; }
 		set { showInLevel = value; }
-	}
-	
-	public float Speed {
-		get { return speed; }
-		set { speed = value; }
 	}
 
 	public bool IsInLevel {
@@ -35,15 +31,21 @@ public class ObstacleLevel : MonoBehaviour {
 	}
 
 	void Start () {
-		startingPos = transform.position;
-		if (obstacleLevels [showInLevel] == null) {
-			obstacleLevels [showInLevel] = new List<ObstacleLevel>();
-		}
-		obstacleLevels[showInLevel].Add (this);
 		//As long as there is reference to game, we should be fine
 		if (game != null) {
 			staticGame = game;
 		}
+		startingPos = transform.position;
+		
+		if (isTransitionLevel) {
+			transitionLevel = this;
+			return;
+		}
+
+		if (obstacleLevels [showInLevel] == null) {
+			obstacleLevels [showInLevel] = new List<ObstacleLevel>();
+		}
+		obstacleLevels[showInLevel].Add (this);
 	}
 
 	void Update () {
@@ -54,7 +56,7 @@ public class ObstacleLevel : MonoBehaviour {
 
 		transform.position = new Vector3 (
 			transform.position.x,
-			transform.position.y - speed * Time.deltaTime,
+			transform.position.y - staticGame.CurrentSpeed * Time.deltaTime,
 			transform.position.z
 		);
 	}
@@ -72,17 +74,20 @@ public class ObstacleLevel : MonoBehaviour {
 		while (os.IsInLevel) {
 			os = osList[Random.Range(0,osList.Count)];
 		}
-		os.Enter (_speed);
+		os.Enter ();
 		return os;
+	}
+
+	public static ObstacleLevel ActivateTransitionObstacle (float _speed) {
+		transitionLevel.Enter ();
+		return transitionLevel;
 	}
 
 	/// <summary>
 	/// Puts obstacles in the level
 	/// </summary>
-	/// <param name="_speed">_speed to which obstacle will move down</param>
-	public void Enter(float _speed) {
+	public void Enter() {
 		transform.position = new Vector3 (0,5,0);
-		Speed = _speed;
 		IsInLevel = true;
 	}
 
@@ -99,7 +104,6 @@ public class ObstacleLevel : MonoBehaviour {
 	}
 
 	public void ForceExit () {
-		Speed = 0;
 		IsInLevel = false;
 		transform.position = startingPos;
 	}
@@ -116,6 +120,10 @@ public class ObstacleLevel : MonoBehaviour {
 		foreach (Pickup p in pickups) {
 			p.Reset ();
 		}
+	}
+
+	public void NextLevel () {
+		staticGame.TransitionLevel ();
 	}
 }
 

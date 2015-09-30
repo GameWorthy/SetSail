@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using GameWorthy;
 
 public class Game : MonoBehaviour {
@@ -28,12 +29,18 @@ public class Game : MonoBehaviour {
 	private float currentSpeed = 4;
 	private float currentMiles = 0;
 	private GameData gameData = null;
+	private bool isTransitioning = false;
 
 	private static Game self = null;
 
 	public int CurrentLevel {
 		get { return currentLevel; }
 		private set { currentLevel = value; }
+	}
+
+	public float CurrentSpeed {
+		get { return currentSpeed; }
+		private set { currentSpeed = value; }
 	}
 
 	public static bool GameInProgress {
@@ -149,34 +156,51 @@ public class Game : MonoBehaviour {
 		if (gameInProgress) {
 			return;
 		}
-		CurrentLevel = 0;
+
 		gameInProgress = true;
+
 		menuState = MenuState.IN_GAME;
+
 		if (currentObstacle != null) {
 			currentObstacle.ForceExit();
 		}
+
+		CurrentLevel = 0;
 		currentMiles = 0;
+		currentSpeed = LevelMetadata.GetLevelSpeed (1);
+
 		ship.Live ();
 		ship.GoDown ();
+
 		NextLevel ();
 	}
 	
 	public void NextLevel() {
-		CurrentLevel++;
-		currentSpeed = LevelMetadata.GetLevelSpeed(CurrentLevel);
-		ColorSea(LevelMetadata.GetLevelSeaColor(CurrentLevel));
-		StartMovement ();
+		if (!isTransitioning) {
+			CurrentLevel++;
+		}
+		isTransitioning = false;
 		NextObstacle ();
+	}
+
+	public void TransitionLevel () {
+		isTransitioning = true;
+		CurrentLevel++;
+		StartMovement ();
+		DOTween.To (() => currentSpeed, x => currentSpeed = x, LevelMetadata.GetLevelSpeed (CurrentLevel), 1f);
+		ColorSea(LevelMetadata.GetLevelSeaColor(CurrentLevel));
 	}
 
 	public void NextObstacle() {
 		int milestone = LevelMetadata.GetLevelMilestone (currentLevel);
 		if (currentMiles >= milestone) {
 			if(milestone >= 0) {
-				NextLevel();
+				currentObstacle = ObstacleLevel.ActivateTransitionObstacle(currentSpeed);
+				currentObstacle.OnLevelEnter();
 				return;
 			}
 		}
+
 		if(currentObstacle != null) {
 			currentObstacle.OnLevelExit ();	
 		}
@@ -248,8 +272,8 @@ public class Game : MonoBehaviour {
 	}
 
 	private void StartMovement() {
-		SideLines.Speed = currentSpeed;
-		Wave.Speed = currentSpeed;
+		SideLines.Speed = LevelMetadata.GetLevelSpeed (CurrentLevel);
+		Wave.Speed = LevelMetadata.GetLevelSpeed (CurrentLevel);
 	}
 
 	private void StopMovement() {
@@ -258,7 +282,7 @@ public class Game : MonoBehaviour {
 	}
 
 	private void ColorSea(Color _color) {
-		seaSprite.color = _color;
+		seaSprite.DOColor (_color, 1f);;
 	}
 }
 
