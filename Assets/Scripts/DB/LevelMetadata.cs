@@ -9,7 +9,7 @@ public class LevelMetadata  {
 		//index 2: nautical_milestone
 		//index 3: sea_color
 		//index 4: level_name
-		{0, 3,   0, Color.white},
+		{0, 3,   0, Color.white, ""},
 		{1, 4,  50, new Color(133f/255f,255f/255f,205f/255f),"Nilo River"},
 		{2, 6, 120, new Color(103f/255f,161f/255f,203f/255f),"Atlantic Ocean"},
 		{3, 8, 260, new Color(103f/255f,203f/255f,132f/255f),"Amazon River"},
