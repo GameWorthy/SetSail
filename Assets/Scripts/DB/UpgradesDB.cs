@@ -37,11 +37,11 @@ public class UpgradesDB {
 		//index 2: upgrade_prie
 		//index 3: description
 		{0,3.0f,-1, ""},
-		{1,2.5f,100, "Get an extra food barrel."},
-		{2,2.0f,250, "Build an extra food room."},
-		{3,1.5f,500, "Hire a chef."},
-		{4,0.6f,1000, "Purchase fishing rods."},
-		{5,0.2f,2000, "Farm in the boat."}
+		{1,0.25f,100, "Get an extra food barrel."},
+		{2,0.20f,250, "Build an extra food room."},
+		{3,0.15f,500, "Hire a chef."},
+		{4,0.06f,1000, "Purchase fishing rods."},
+		{5,0.02f,2000, "Farm in the boat."}
 	};
 	
 	public static float GetFoodValue(int _upgradeLevel) {

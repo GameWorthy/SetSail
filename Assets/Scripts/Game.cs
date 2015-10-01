@@ -180,6 +180,7 @@ public class Game : MonoBehaviour {
 			CurrentLevel++;
 		}
 		isTransitioning = false;
+		StartMovement ();
 		NextObstacle ();
 	}
 

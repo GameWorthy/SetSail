@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
 using DG.Tweening;
 
 public class Ship : MonoBehaviour {
