@@ -198,6 +198,7 @@ public class Game : MonoBehaviour {
 			if(milestone >= 0) {
 				currentObstacle = ObstacleLevel.ActivateTransitionObstacle(currentSpeed);
 				currentObstacle.OnLevelEnter();
+				ship.Refuel(20);
 				return;
 			}
 		}
