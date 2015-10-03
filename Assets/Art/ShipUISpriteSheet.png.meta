@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7210f3e781a45438b8bf54ea239fffc3
-timeCreated: 1443406381
+timeCreated: 1443902866
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -32,6 +32,7 @@ TextureImporter:
     21300050: cloud_4
     21300052: cloud_5
     21300054: cloud_6
+    21300056: sign
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -65,6 +66,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -77,40 +79,10 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: boat_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 86
-        width: 13
-        height: 14
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sale_1
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 96
-        width: 13
-        height: 4
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sale_2
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 92
-        width: 13
-        height: 3
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: coin
       rect:
         serializedVersion: 2
-        x: 28
+        x: 0
         y: 96
         width: 4
         height: 4
@@ -120,7 +92,7 @@ TextureImporter:
     - name: plus_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 5
         y: 95
         width: 7
         height: 5
@@ -170,7 +142,7 @@ TextureImporter:
     - name: skull
       rect:
         serializedVersion: 2
-        x: 41
+        x: 70
         y: 74
         width: 12
         height: 11
@@ -180,7 +152,7 @@ TextureImporter:
     - name: helm
       rect:
         serializedVersion: 2
-        x: 58
+        x: 85
         y: 72
         width: 13
         height: 13
@@ -190,8 +162,8 @@ TextureImporter:
     - name: plus_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 89
+        x: 13
+        y: 95
         width: 7
         height: 5
       alignment: 0
@@ -200,8 +172,8 @@ TextureImporter:
     - name: plus_3
       rect:
         serializedVersion: 2
-        x: 33
-        y: 83
+        x: 21
+        y: 95
         width: 7
         height: 5
       alignment: 0
@@ -210,8 +182,8 @@ TextureImporter:
     - name: plus_4
       rect:
         serializedVersion: 2
-        x: 33
-        y: 77
+        x: 29
+        y: 95
         width: 7
         height: 5
       alignment: 0
@@ -220,20 +192,10 @@ TextureImporter:
     - name: plus_5
       rect:
         serializedVersion: 2
-        x: 33
-        y: 71
+        x: 1
+        y: 88
         width: 7
         height: 5
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: boat_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 71
-        width: 13
-        height: 14
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,6 +266,16 @@ TextureImporter:
         y: 0
         width: 84
         height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sign
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 57
+        height: 22
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

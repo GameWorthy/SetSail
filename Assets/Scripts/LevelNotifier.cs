@@ -5,10 +5,12 @@ using DG.Tweening;
 public class LevelNotifier : MonoBehaviour {
 
 
-	[SerializeField] private TextMesh text = null;
+	[SerializeField] private TextMesh[] text = null;
 	
 	public void Present(string _text) {
-		text.text = _text;
+		foreach (TextMesh t in text) {
+			t.text = _text;
+		}
 		StartCoroutine (Present ());
 	}
 
