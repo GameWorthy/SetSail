@@ -12,10 +12,10 @@ public class UpgradesDB {
 		//index 3: description
 		{0,1.0f,-1, ""},
 		{1,1.5f,100, "Remove rust from the helm."},
-		{2,2.0f,250, "Greese the helm for faster turning."},
-		{3,2.7f,500, "Fix the holes in your sales, it helps for turning."},
-		{4,3.5f,1000, "Polish the hull."},
-		{5,4.5f,2000, "Healm MZ3000, the best healm in the market."}
+		{2,2.0f,250, "Polish the hull."},
+		{3,2.7f,500, "Patch the holes in the sail, catch the wind!"},
+		{4,3.5f,1000, "Greese the helm for faster turning."},
+		{5,4.5f,2000, "Healm 9001, the best healm in the realm."}
 	};
 	
 	public static float GetTurnValue(int _upgradeLevel) {
@@ -37,11 +37,11 @@ public class UpgradesDB {
 		//index 2: upgrade_prie
 		//index 3: description
 		{0,3.0f,-1, ""},
-		{1,0.25f,100, "Get an extra food barrel."},
-		{2,0.20f,250, "Build an extra food room."},
-		{3,0.15f,500, "Hire a chef."},
-		{4,0.06f,1000, "Purchase fishing rods."},
-		{5,0.02f,2000, "Farm in the boat."}
+		{1,0.25f,100, "Extra rations."},
+		{2,0.20f,250, "Buy food crates."},
+		{3,0.15f,500, "Buy food barrels."},
+		{4,0.06f,1000, "Build a storage room."},
+		{5,0.02f,2000, "Hire a chef."}
 	};
 	
 	public static float GetFoodValue(int _upgradeLevel) {
@@ -66,11 +66,11 @@ public class UpgradesDB {
 		//index 4: description
 		//
 		{0,999,999,-1, ""},
-		{1,4,999,100, "Double Coins Shows Up From Level 4."},
-		{2,3,999,250, "Double Coins Shows Up From Level 3."},
-		{3,3,6,500, "Triple Coins Shows Up From Level 6."},
-		{4,3,5,1000, "Tripple Coins Shows Up From Level 5."},
-		{5,2,4,2000, "Doble Coins Shows Up From Level 2 and Triple Coins Shows Up From Level 4."}
+		{1,4,999,100, "Double Coins Starts At Level 4."},
+		{2,3,999,250, "Double Coins Starts At Level 3."},
+		{3,3,6,500, "Triple Coins Starts At Level 6."},
+		{4,3,5,1000, "Tripple Coins Starts At Level 5."},
+		{5,2,4,2000, "Double Coins Starts At Level 2 and Triple Coins Starts At Level 4."}
 	};
 	
 	public static int GetDoubleCoinLevel(int _upgradeLevel) {

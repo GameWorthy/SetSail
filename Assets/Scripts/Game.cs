@@ -22,7 +22,9 @@ public class Game : MonoBehaviour {
 	[SerializeField] private Ship ship = null;
 	[SerializeField] private Text nauticMilesText = null;
 	[SerializeField] private CoinUI coinUi = null;
-	[SerializeField] SpriteRenderer seaSprite = null;
+	[SerializeField] private SpriteRenderer seaSprite = null;
+	[SerializeField] private LevelNotifier levelNotifier = null;
+
 	private bool gameInProgress = false;
 	private ObstacleLevel currentObstacle = null;
 	private int currentLevel = 0;
@@ -180,6 +182,7 @@ public class Game : MonoBehaviour {
 			CurrentLevel++;
 		}
 		isTransitioning = false;
+		levelNotifier.Present (LevelMetadata.GetLevelName(CurrentLevel));
 		StartMovement ();
 		NextObstacle ();
 	}
@@ -187,6 +190,7 @@ public class Game : MonoBehaviour {
 	public void TransitionLevel () {
 		isTransitioning = true;
 		CurrentLevel++;
+		levelNotifier.Present (LevelMetadata.GetLevelName(CurrentLevel));
 		StartMovement ();
 		DOTween.To (() => currentSpeed, x => currentSpeed = x, LevelMetadata.GetLevelSpeed (CurrentLevel), 1f);
 		ColorSea(LevelMetadata.GetLevelSeaColor(CurrentLevel));
