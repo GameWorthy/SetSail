@@ -24,6 +24,7 @@ public class Game : MonoBehaviour {
 	[SerializeField] private CoinUI coinUi = null;
 	[SerializeField] private SpriteRenderer seaSprite = null;
 	[SerializeField] private LevelNotifier levelNotifier = null;
+	[SerializeField] private Continue continueButton = null;
 
 	private bool gameInProgress = false;
 	private ObstacleLevel currentObstacle = null;
@@ -45,6 +46,11 @@ public class Game : MonoBehaviour {
 		private set { currentSpeed = value; }
 	}
 
+	public float CurrentMiles {
+		get { return currentMiles; }
+		private set { currentMiles = value; }
+	}
+
 	public static bool GameInProgress {
 		get {return self.gameInProgress;}
 		set {self.gameInProgress = value;}
@@ -58,6 +64,7 @@ public class Game : MonoBehaviour {
 		}
 	}
 
+
 	public static int GetRandomCoinValue() {
 		int total = 1;
 
@@ -69,6 +76,10 @@ public class Game : MonoBehaviour {
 		}
 
 		return UnityEngine.Random.Range (1, total + 1);
+	}
+
+	public static Game GetSelf () {
+		return self;
 	}
 
 	void Awake() {
@@ -222,6 +233,7 @@ public class Game : MonoBehaviour {
 		isTransitioning = false;
 		menuState = MenuState.GAME_OVER;
 		ship.Die ();
+		continueButton.UpdateInfo ();
 
 		if (currentMiles > gameData.highScore) {
 			gameData.highScore = (int)currentMiles;
@@ -246,13 +258,30 @@ public class Game : MonoBehaviour {
 		}
 		
 		menu.UpdateMedalsText ();
-		GameCoins += (int)currentMiles / 2;
 		
 		menu.SetHighScore (gameData.highScore);
 		menu.SetCurrentScore ((int)currentMiles);
 		gameData.totalMiles += (int)currentMiles;
 
-		MemoryCard.Save (gameData, "game");
+		Save();
+	}
+
+	public void ContinueGame () {
+		menuState = MenuState.IN_GAME;
+		gameInProgress = true;
+
+		//remove the current obstacle
+		currentObstacle.ForceExit ();
+		//put on the new obstacle
+		NextObstacle ();
+		//remove the recently added miles
+		gameData.totalMiles -= (int)currentMiles;
+
+		StartMovement ();
+
+		ship.Live ();
+		ship.transform.position = new Vector3 (0,ship.transform.position.y,ship.transform.position.z);
+		ship.Refuel(50);
 	}
 
 	public void ShowMenu() {
@@ -291,6 +320,10 @@ public class Game : MonoBehaviour {
 
 	private void ColorSea(Color _color) {
 		seaSprite.DOColor (_color, 1f);;
+	}
+
+	public static void Save() {
+		MemoryCard.Save (self.gameData, "game");
 	}
 }
 

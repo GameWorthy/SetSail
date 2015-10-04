@@ -63,6 +63,7 @@ public class Ship : MonoBehaviour {
 
 
 		if (Game.GameInProgress) {
+			Debug.Log (fuelConsuptionRate);
 			fuel.Percentage -= Time.deltaTime * fuelConsuptionRate;
 			if(fuel.Percentage <= 0) {
 				game.SetGameOver();
