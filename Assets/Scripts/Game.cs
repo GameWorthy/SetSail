@@ -13,7 +13,8 @@ public class Game : MonoBehaviour {
 		IN_GAME,
 		GAME_OVER,
 		SETTINGS,
-		MEDALS
+		MEDALS,
+		UPGRADE_SHOP
 	}
 
 	private MenuState menuState = MenuState.OFF;
@@ -306,6 +307,10 @@ public class Game : MonoBehaviour {
 
 	public void ShowMedals() {
 		menuState = MenuState.MEDALS;
+	}
+
+	public void ShowUpgradeShop() {
+		menuState = MenuState.UPGRADE_SHOP;
 	}
 
 	private void StartMovement() {
