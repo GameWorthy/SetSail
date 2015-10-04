@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Fuel : MonoBehaviour {
 
-	[SerializeField] RectTransform fuelBar = null;
+	[SerializeField] Image fuelBar = null;
 	[SerializeField] private Image food = null;
 	[SerializeField] private Sprite[] chikenWings = null;
 
@@ -25,9 +25,9 @@ public class Fuel : MonoBehaviour {
 		float translated = (maxRight - minRight)/100;
 		translated = maxRight - (_newPercentage * translated);
 
-		fuelBar.offsetMax = new Vector2 (
+		fuelBar.rectTransform.offsetMax = new Vector2 (
 			-translated,
-			fuelBar.offsetMax.y
+			fuelBar.rectTransform.offsetMax.y
 		);
 
 		int chickenWingsLength = chikenWings.Length;
@@ -35,5 +35,8 @@ public class Fuel : MonoBehaviour {
 		spriteIndex = chickenWingsLength - 1 - Mathf.Clamp (spriteIndex, 0, chickenWingsLength - 1);
 
 		food.sprite = chikenWings [spriteIndex];
+
+		float c = _newPercentage / 100;
+		fuelBar.color = new Color (1 - c, c, 0, 1);
 	}
 }

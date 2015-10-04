@@ -170,6 +170,7 @@ public class Game : MonoBehaviour {
 		CurrentLevel = 0;
 		currentMiles = 0;
 		currentSpeed = LevelMetadata.GetLevelSpeed (1);
+		ColorSea(LevelMetadata.GetLevelSeaColor(1));
 
 		ship.Live ();
 		ship.GoDown ();
@@ -218,6 +219,7 @@ public class Game : MonoBehaviour {
 		StopMovement ();
 
 		gameInProgress = false;
+		isTransitioning = false;
 		menuState = MenuState.GAME_OVER;
 		ship.Die ();
 
