@@ -110,8 +110,6 @@ public class Game : MonoBehaviour {
 		coinUi.UpdateText (gameData.coins);
 		SetShipUpgradeStats ();
 
-		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
-
 	}
 
 	void Update() {
@@ -166,6 +164,10 @@ public class Game : MonoBehaviour {
 			gameData.foodLevel = 5;
 			gameData.turnLevel = 5;
 			SetShipUpgradeStats();
+		}
+
+		if (Input.GetKeyDown (KeyCode.P)) {
+			GameCoins += 100;
 		}
 	}
 
@@ -313,6 +315,7 @@ public class Game : MonoBehaviour {
 	}
 
 	public void ShowUpgradeShop() {
+		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
 		ship.MoveShip (-2.25f);
 		menuState = MenuState.UPGRADE_SHOP;
 	}
@@ -333,6 +336,30 @@ public class Game : MonoBehaviour {
 
 	public static void Save() {
 		MemoryCard.Save (self.gameData, "game");
+	}
+
+	public void UpgradeTurn() {
+		gameData.turnLevel++;
+		if (gameData.turnLevel > UpgradesDB.MAX_UPGRADE_LEVEL) {
+			gameData.turnLevel = UpgradesDB.MAX_UPGRADE_LEVEL;
+		}
+		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+	}
+
+	public void UpgradeFood() {
+		gameData.foodLevel++;
+		if (gameData.foodLevel > UpgradesDB.MAX_UPGRADE_LEVEL) {
+			gameData.foodLevel = UpgradesDB.MAX_UPGRADE_LEVEL;
+		}
+		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+	}
+
+	public void UpgradeCoin() {
+		gameData.coinLevel++;
+		if (gameData.coinLevel > UpgradesDB.MAX_UPGRADE_LEVEL) {
+			gameData.coinLevel = UpgradesDB.MAX_UPGRADE_LEVEL;
+		}
+		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
 	}
 }
 

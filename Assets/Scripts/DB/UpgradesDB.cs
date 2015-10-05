@@ -16,17 +16,21 @@ public class UpgradesDB {
 		{3,2.7f,500, "Patch the holes in the sail, catch the wind!"},
 		{4,3.5f,1000, "Greese the helm for faster turning."},
 		{5,4.5f,2000, "Healm 9001, the best healm in the realm."}
+
 	};
 	
 	public static float GetTurnValue(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (float)turnUpgrade[_upgradeLevel,1];
 	}
 	
 	public static int GetTurnPrice(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (int)turnUpgrade[_upgradeLevel,2];
 	}
 	
 	public static string GetTurnDescription(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (string)turnUpgrade[_upgradeLevel,3];
 	}
 	
@@ -45,14 +49,17 @@ public class UpgradesDB {
 	};
 	
 	public static float GetFoodValue(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (float)foodUpgrade[_upgradeLevel,1];
 	}
 	
 	public static int GetFoodPrice(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (int)foodUpgrade[_upgradeLevel,2];
 	}
 	
 	public static string GetFoodDescription(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (string)foodUpgrade[_upgradeLevel,3];
 	}
 
@@ -74,18 +81,22 @@ public class UpgradesDB {
 	};
 	
 	public static int GetDoubleCoinLevel(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (int)coinsUpgrade[_upgradeLevel,1];
 	}
 	
 	public static int GetTrippeCoinLevel(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (int)coinsUpgrade[_upgradeLevel,2];
 	}
 
 	public static int GetCoinUpgradePrice(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (int)coinsUpgrade[_upgradeLevel,3];
 	}
 	
 	public static string GetCoinDescription(int _upgradeLevel) {
+		_upgradeLevel = _upgradeLevel >= MAX_UPGRADE_LEVEL ? MAX_UPGRADE_LEVEL : _upgradeLevel;
 		return (string)coinsUpgrade[_upgradeLevel,4];
 	}
 }
