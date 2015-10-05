@@ -13,7 +13,6 @@ public class Continue : MonoBehaviour {
 
 	public void UpdateInfo () {
 		int price = CalculatePrice ((int)game.CurrentMiles);
-		Debug.Log (price);
 		if (price >= Game.GameCoins) {
 			this.gameObject.SetActive (false);
 		} else {

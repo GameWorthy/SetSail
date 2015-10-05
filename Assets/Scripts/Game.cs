@@ -26,6 +26,7 @@ public class Game : MonoBehaviour {
 	[SerializeField] private SpriteRenderer seaSprite = null;
 	[SerializeField] private LevelNotifier levelNotifier = null;
 	[SerializeField] private Continue continueButton = null;
+	[SerializeField] private UpgradeShop upgradeShop = null;
 
 	private bool gameInProgress = false;
 	private ObstacleLevel currentObstacle = null;
@@ -109,6 +110,8 @@ public class Game : MonoBehaviour {
 		coinUi.UpdateText (gameData.coins);
 		SetShipUpgradeStats ();
 
+		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+
 	}
 
 	void Update() {
@@ -185,7 +188,7 @@ public class Game : MonoBehaviour {
 		ColorSea(LevelMetadata.GetLevelSeaColor(1));
 
 		ship.Live ();
-		ship.GoDown ();
+		ship.MoveShip ();
 
 		NextLevel ();
 	}
@@ -288,7 +291,7 @@ public class Game : MonoBehaviour {
 	public void ShowMenu() {
 		StartMovement ();
 		ship.Live ();
-		ship.GoUp ();
+		ship.MoveShip (0f);
 		ColorSea (LevelMetadata.GetLevelSeaColor(1));
 		menuState = MenuState.MAIN_MENU;
 		if (currentObstacle != null) {
@@ -310,6 +313,7 @@ public class Game : MonoBehaviour {
 	}
 
 	public void ShowUpgradeShop() {
+		ship.MoveShip (-2.25f);
 		menuState = MenuState.UPGRADE_SHOP;
 	}
 
