@@ -294,6 +294,7 @@ public class Game : MonoBehaviour {
 		StartMovement ();
 		ship.Live ();
 		ship.MoveShip (0f);
+		ship.RandomizeShip ();
 		ColorSea (LevelMetadata.GetLevelSeaColor(1));
 		menuState = MenuState.MAIN_MENU;
 		if (currentObstacle != null) {

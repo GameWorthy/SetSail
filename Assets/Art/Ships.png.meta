@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 64ce2da53b81541b5987c32d7f4cab76
-timeCreated: 1444110363
+timeCreated: 1444111374
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -331,8 +331,8 @@ TextureImporter:
         y: 82
         width: 13
         height: 3
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bot_sail_6
       rect:

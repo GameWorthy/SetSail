@@ -8,7 +8,7 @@ public class Sail : MonoBehaviour {
 	[SerializeField] private Sprite[] topSails = null;
 	[SerializeField] private Sprite[] botSails = null;
 
-	void Start () {
+	public void Randomize () {
 		int rand = Random.Range (0, topSails.Length);
 		topSail.sprite = topSails [rand];
 		botSail.sprite = botSails [rand];

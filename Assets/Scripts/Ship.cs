@@ -15,6 +15,8 @@ public class Ship : MonoBehaviour {
 	private float previousRotation = 0;
 	private bool isDead = false;
 	private ParticleSystem[] particles = null;
+	private SpriteRenderer sr = null;
+	private Sail sail = null;
 
 	public float TurnSpeed {
 		get{return turnSpeed;}
@@ -25,10 +27,16 @@ public class Ship : MonoBehaviour {
 		get {return fuelConsuptionRate;}
 		set {fuelConsuptionRate = value;}
 	}
-
+	
 	void Start() {
 		particles = GetComponentsInChildren<ParticleSystem> ();
-		this.GetComponent<SpriteRenderer>().sprite = shipSprites[Random.Range(0,shipSprites.Length)];
+		sr = this.GetComponent<SpriteRenderer> ();
+		sail = this.GetComponent<Sail> ();
+	}
+
+	public void RandomizeShip() {
+		sr.sprite = shipSprites[Random.Range(0,shipSprites.Length)];
+		sail.Randomize ();
 	}
 
 	void Update() {
