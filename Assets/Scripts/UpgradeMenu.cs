@@ -8,6 +8,7 @@ public class UpgradeMenu : MonoBehaviour {
 	[SerializeField] private Image[] upgradeDots = null; 
 	[SerializeField] private Text priceText = null;
 	[SerializeField] private Image purchaseBox = null;
+	[SerializeField] private UpgradeInfo upgradeInfo = null;
 	private UpgradeShop upgradeShop = null;
 	private int upgradeLevel = 0;
 
@@ -59,6 +60,11 @@ public class UpgradeMenu : MonoBehaviour {
 		}
 	}
 
+	public void ShowInfo() {
+
+		upgradeInfo.ShowInfo (menuType.ToString(),Getdescription());
+	}
+
 	private int GetPrice() {
 		switch (menuType) {
 		case UpgradeTypes.YEW:
@@ -69,5 +75,20 @@ public class UpgradeMenu : MonoBehaviour {
 			return UpgradesDB.GetCoinUpgradePrice(upgradeLevel + 1);
 		}
 		return 0;
+	}
+
+	private string Getdescription() {
+		if (upgradeLevel >= UpgradesDB.MAX_UPGRADE_LEVEL) {
+			return "Maxed";
+		}
+		switch (menuType) {
+		case UpgradeTypes.YEW:
+			return UpgradesDB.GetTurnDescription(upgradeLevel + 1);
+		case UpgradeTypes.FOOD:
+			return UpgradesDB.GetFoodDescription(upgradeLevel + 1);
+		case UpgradeTypes.COINS:
+			return UpgradesDB.GetCoinDescription(upgradeLevel + 1);
+		}
+		return "";
 	}
 }
