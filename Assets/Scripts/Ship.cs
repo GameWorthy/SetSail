@@ -6,6 +6,7 @@ public class Ship : MonoBehaviour {
 
 	[SerializeField] Game game = null;
 	[SerializeField] Fuel fuel = null;
+	[SerializeField] Sprite[] shipSprites = null;
 	private const float LANE_WIDTH = 2.3f;
 	private int direction = 0;
 	private float turnSpeed = 3.4f;
@@ -27,6 +28,7 @@ public class Ship : MonoBehaviour {
 
 	void Start() {
 		particles = GetComponentsInChildren<ParticleSystem> ();
+		this.GetComponent<SpriteRenderer>().sprite = shipSprites[Random.Range(0,shipSprites.Length)];
 	}
 
 	void Update() {

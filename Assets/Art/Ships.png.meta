@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 64ce2da53b81541b5987c32d7f4cab76
-timeCreated: 1443904151
+timeCreated: 1444110363
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,46 @@ TextureImporter:
     21300002: sail_0
     21300004: Ship_1
     21300006: Sail_1
+    21300008: ship_0
+    21300010: ship_1
+    21300012: ship_2
+    21300014: top_sail_3
+    21300016: top_sail_2
+    21300018: top_sail_1
+    21300020: top_sail_0
+    21300022: bot_sail_3
+    21300024: bot_sail_2
+    21300026: bot_sail_1
+    21300028: bot_sail_0
+    21300030: ship_3
+    21300032: ship_4
+    21300034: ship_5
+    21300036: top_sail_7
+    21300038: top_sail_5
+    21300040: top_sail_4
+    21300042: top_sail_6
+    21300044: bot_sail_9
+    21300046: bot_sail_4
+    21300048: top_sail_13
+    21300050: top_sail_12
+    21300052: bot_sail_11
+    21300054: bot_sail_5
+    21300056: bot_sail_6
+    21300058: bot_sail_7
+    21300060: top_sail_10
+    21300062: top_sail_9
+    21300064: top_sail_8
+    21300066: bot_sail_8
+    21300068: bot_sail_10
+    21300070: top_sail_11
+    21300072: top_sail_14
+    21300074: top_sail_15
+    21300076: top_sail_16
+    21300078: bot_sail_12
+    21300080: bot_sail_13
+    21300082: bot_sail_16
+    21300084: bot_sail_15
+    21300086: bot_sail_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,7 +94,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Ship_0
+    - name: ship_0
       rect:
         serializedVersion: 2
         x: 0
@@ -64,7 +104,57 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: sail_0
+    - name: ship_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 86
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ship_2
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 86
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 95
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 95
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 95
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_0
       rect:
         serializedVersion: 2
         x: 86
@@ -74,7 +164,47 @@ TextureImporter:
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Ship_1
+    - name: bot_sail_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 91
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 91
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 91
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 91
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ship_3
       rect:
         serializedVersion: 2
         x: 0
@@ -84,11 +214,281 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Sail_1
+    - name: ship_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 71
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ship_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 71
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_7
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 86
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 86
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_4
       rect:
         serializedVersion: 2
         x: 86
-        y: 91
+        y: 86
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 86
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 73
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_4
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 82
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_13
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 68
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 68
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 64
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 82
+        width: 13
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 82
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_7
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 82
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_10
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 77
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 77
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_8
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 77
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_8
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 73
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_10
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 73
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 68
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_14
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 59
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 59
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: top_sail_16
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 59
+        width: 13
+        height: 4
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 64
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_13
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 64
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_16
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 55
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 55
+        width: 13
+        height: 3
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bot_sail_14
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 55
         width: 13
         height: 3
       alignment: 7
