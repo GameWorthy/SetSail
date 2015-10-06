@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum UpgradeTypes {
-	YEW,
+	YAW,
 	FOOD,
 	COINS
 }
@@ -13,7 +13,7 @@ public class UpgradeShop : MonoBehaviour {
 	[SerializeField] private UpgradeMenu[] upgradeMenus = null;
 
 	public void PopulateUpgrades(int _turnLevel, int _foodLevel, int _coinLevel) {
-		upgradeMenus [(int)UpgradeTypes.YEW].UpdateUI (_turnLevel);
+		upgradeMenus [(int)UpgradeTypes.YAW].UpdateUI (_turnLevel);
 		upgradeMenus [(int)UpgradeTypes.FOOD].UpdateUI (_foodLevel);
 		upgradeMenus [(int)UpgradeTypes.COINS].UpdateUI (_coinLevel);
 	}
@@ -21,7 +21,7 @@ public class UpgradeShop : MonoBehaviour {
 	public void PurchaseUpgrade(UpgradeTypes _upgradeType, int _price) {
 		Game.GameCoins -= _price;
 		switch (_upgradeType) {
-			case UpgradeTypes.YEW:
+			case UpgradeTypes.YAW:
 				Game.GetSelf().UpgradeTurn();
 				break;
 			case UpgradeTypes.FOOD:
