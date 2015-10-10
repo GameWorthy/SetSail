@@ -31,6 +31,7 @@ public class ObstacleLevel : MonoBehaviour {
 	}
 
 	void Start () {
+
 		//As long as there is reference to game, we should be fine
 		if (game != null) {
 			staticGame = game;
@@ -54,11 +55,14 @@ public class ObstacleLevel : MonoBehaviour {
 			return;
 		}
 
-		transform.position = new Vector3 (
-			transform.position.x,
-			transform.position.y - staticGame.CurrentSpeed * Time.deltaTime,
-			transform.position.z
-		);
+		if (IsInLevel) {
+			transform.position = new Vector3 (
+				transform.position.x,
+				transform.position.y - staticGame.CurrentSpeed * Time.deltaTime,
+				transform.position.z
+			);
+		}
+		 
 	}
 
 	void OnTriggerEnter2D(Collider2D _other) {
@@ -105,6 +109,7 @@ public class ObstacleLevel : MonoBehaviour {
 
 	public void ForceExit () {
 		IsInLevel = false;
+		//body.velocity = Vector3.zero;
 		transform.position = startingPos;
 	}
 
