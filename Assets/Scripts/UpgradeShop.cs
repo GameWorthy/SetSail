@@ -33,4 +33,13 @@ public class UpgradeShop : MonoBehaviour {
 		}
 		Game.Save ();
 	}
+
+	public bool HasUpgradesAvailable () {
+		foreach (UpgradeMenu um in upgradeMenus) {
+			if(um.CanBuy()) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

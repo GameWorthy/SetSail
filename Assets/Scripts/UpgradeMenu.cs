@@ -47,7 +47,7 @@ public class UpgradeMenu : MonoBehaviour {
 		}
 	}
 
-	private bool CanBuy() {
+	public bool CanBuy() {
 		int price = GetPrice ();
 		return Game.GameCoins >= price && price >= 0;
 	}

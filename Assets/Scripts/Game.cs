@@ -7,6 +7,7 @@ using DG.Tweening;
 using GameWorthy;
 
 public class Game : MonoBehaviour {
+
 	private enum MenuState	{
 		OFF,
 		MAIN_MENU,
@@ -27,6 +28,7 @@ public class Game : MonoBehaviour {
 	[SerializeField] private LevelNotifier levelNotifier = null;
 	[SerializeField] private Continue continueButton = null;
 	[SerializeField] private UpgradeShop upgradeShop = null;
+	[SerializeField] private GameObject[] upgradeNotifications = null;
 
 	private bool gameInProgress = false;
 	private ObstacleLevel currentObstacle = null;
@@ -240,6 +242,7 @@ public class Game : MonoBehaviour {
 		menuState = MenuState.GAME_OVER;
 		ship.Die ();
 		continueButton.UpdateInfo ();
+		CheckForUpgradeNotification ();
 
 		if (currentMiles > gameData.highScore) {
 			gameData.highScore = (int)currentMiles;
@@ -291,6 +294,7 @@ public class Game : MonoBehaviour {
 	}
 
 	public void ShowMenu() {
+		CheckForUpgradeNotification ();
 		StartMovement ();
 		ship.Live ();
 		ship.MoveShip (0f);
@@ -361,6 +365,13 @@ public class Game : MonoBehaviour {
 			gameData.coinLevel = UpgradesDB.MAX_UPGRADE_LEVEL;
 		}
 		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+	}
+
+	private void CheckForUpgradeNotification() {
+		bool canUpgrade = upgradeShop.HasUpgradesAvailable ();
+		foreach (GameObject gmo in upgradeNotifications) {
+			gmo.SetActive(canUpgrade);
+		}
 	}
 }
 
