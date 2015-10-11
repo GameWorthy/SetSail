@@ -11,6 +11,11 @@ public class UpgradeShop : MonoBehaviour {
 
 	//YEW, FOOD and COINS
 	[SerializeField] private UpgradeMenu[] upgradeMenus = null;
+	private AudioSource audioSource = null;
+
+	void Start() {
+		audioSource = GetComponent<AudioSource> ();
+	}
 
 	public void PopulateUpgrades(int _turnLevel, int _foodLevel, int _coinLevel) {
 		upgradeMenus [(int)UpgradeTypes.YAW].UpdateUI (_turnLevel);
@@ -20,6 +25,7 @@ public class UpgradeShop : MonoBehaviour {
 
 	public void PurchaseUpgrade(UpgradeTypes _upgradeType, int _price) {
 		Game.GameCoins -= _price;
+		audioSource.Play ();
 		switch (_upgradeType) {
 			case UpgradeTypes.YAW:
 				Game.GetSelf().UpgradeTurn();
