@@ -19,6 +19,8 @@ public class Game : MonoBehaviour {
 	}
 
 	private MenuState menuState = MenuState.OFF;
+
+	[SerializeField] private int START_AT_LEVEL = 0;
 	
 	[SerializeField] private Menu menu = null;
 	[SerializeField] private Ship ship = null;
@@ -191,15 +193,17 @@ public class Game : MonoBehaviour {
 			currentObstacle.ForceExit();
 		}
 
-		CurrentLevel = 0;
+		CurrentLevel = START_AT_LEVEL;
 		currentMiles = 0;
-		currentSpeed = LevelMetadata.GetLevelSpeed (1);
-		ColorSea(LevelMetadata.GetLevelSeaColor(1));
+		currentSpeed = LevelMetadata.GetLevelSpeed (CurrentLevel+1);
+		ColorSea(LevelMetadata.GetLevelSeaColor(CurrentLevel+1));
 
 		ship.Live ();
 		ship.MoveShip ();
 
 		NextLevel ();
+
+		menu.DeactivateHighScore ();
 	}
 	
 	public void NextLevel() {
