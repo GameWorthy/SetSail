@@ -29,6 +29,7 @@ public class Game : MonoBehaviour {
 	[SerializeField] private Continue continueButton = null;
 	[SerializeField] private UpgradeShop upgradeShop = null;
 	[SerializeField] private GameObject[] upgradeNotifications = null;
+	[SerializeField] private AudioClip[] gameOverClips = null;
 
 	private bool gameInProgress = false;
 	private ObstacleLevel currentObstacle = null;
@@ -37,6 +38,7 @@ public class Game : MonoBehaviour {
 	private float currentMiles = 0;
 	private GameData gameData = null;
 	private bool isTransitioning = false;
+	private AudioSource audioSource = null;
 
 	private static Game self = null;
 
@@ -111,6 +113,9 @@ public class Game : MonoBehaviour {
 
 		coinUi.UpdateText (gameData.coins);
 		SetShipUpgradeStats ();
+
+		
+		audioSource = GetComponent<AudioSource> ();
 
 	}
 
@@ -236,6 +241,9 @@ public class Game : MonoBehaviour {
 
 	public void SetGameOver() {
 		StopMovement ();
+
+		audioSource.clip = gameOverClips[UnityEngine.Random.Range(0,gameOverClips.Length)];
+		audioSource.Play();
 
 		gameInProgress = false;
 		isTransitioning = false;

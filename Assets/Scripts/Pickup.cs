@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour {
 	
 	private bool findParent = true;
 	private Collider2D col = null;
+	private AudioSource audioSource = null;
 
 	public virtual void CollidedWithShip(Ship _ship) {}
 	public virtual void On() {}
@@ -18,6 +19,7 @@ public class Pickup : MonoBehaviour {
 
 	void Start () {
 		col = GetComponent<Collider2D> ();
+		audioSource = GetComponent<AudioSource> ();
 		LookForParent ();
 	}
 
@@ -26,6 +28,10 @@ public class Pickup : MonoBehaviour {
 			col.enabled = false;
 			CollidedWithShip(_other.GetComponent<Ship>());
 			Off ();
+			if(audioSource) {
+				audioSource.pitch = Random.Range(0.95f,1.05f);
+				audioSource.Play();
+			}
 		}
 	}
 
