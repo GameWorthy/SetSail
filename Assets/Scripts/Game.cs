@@ -295,6 +295,10 @@ public class Game : MonoBehaviour {
 
 	public void ShowMenu() {
 		CheckForUpgradeNotification ();
+		
+		currentSpeed = LevelMetadata.GetLevelSpeed (1);
+		ColorSea(LevelMetadata.GetLevelSeaColor(1));
+
 		StartMovement ();
 		ship.Live ();
 		ship.MoveShip (0f);
@@ -349,6 +353,7 @@ public class Game : MonoBehaviour {
 			gameData.turnLevel = UpgradesDB.MAX_UPGRADE_LEVEL;
 		}
 		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+		SetShipUpgradeStats ();
 	}
 
 	public void UpgradeFood() {
@@ -357,6 +362,7 @@ public class Game : MonoBehaviour {
 			gameData.foodLevel = UpgradesDB.MAX_UPGRADE_LEVEL;
 		}
 		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+		SetShipUpgradeStats ();
 	}
 
 	public void UpgradeCoin() {
@@ -365,6 +371,7 @@ public class Game : MonoBehaviour {
 			gameData.coinLevel = UpgradesDB.MAX_UPGRADE_LEVEL;
 		}
 		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+		SetShipUpgradeStats ();
 	}
 
 	private void CheckForUpgradeNotification() {
