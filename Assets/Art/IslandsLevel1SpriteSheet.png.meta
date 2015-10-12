@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 10ab89730926c40d1b858d21b1665c6f
-timeCreated: 1444515270
+timeCreated: 1444604035
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,7 @@ TextureImporter:
     21300014: container_0
     21300016: newrock_0
     21300018: croc_0
+    21300020: container_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -132,8 +133,8 @@ TextureImporter:
     - name: container_0
       rect:
         serializedVersion: 2
-        x: 106
-        y: 41
+        x: 101
+        y: 37
         width: 26
         height: 42
       alignment: 0
@@ -156,6 +157,16 @@ TextureImporter:
         y: 86
         width: 12
         height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: container_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 37
+        width: 26
+        height: 42
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
