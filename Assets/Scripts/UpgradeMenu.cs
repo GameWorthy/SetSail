@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UpgradeMenu : MonoBehaviour {
 
-	[SerializeField] private UpgradeTypes menuType = UpgradeTypes.YAW;
+	[SerializeField] private UpgradeTypes menuType = UpgradeTypes.TURN;
 	[SerializeField] private Image[] upgradeDots = null; 
 	[SerializeField] private Text priceText = null;
 	[SerializeField] private Image purchaseBox = null;
@@ -67,7 +67,7 @@ public class UpgradeMenu : MonoBehaviour {
 
 	private int GetPrice() {
 		switch (menuType) {
-		case UpgradeTypes.YAW:
+		case UpgradeTypes.TURN:
 			return UpgradesDB.GetTurnPrice(upgradeLevel + 1);
 		case UpgradeTypes.FOOD:
 			return UpgradesDB.GetFoodPrice(upgradeLevel + 1);
@@ -82,7 +82,7 @@ public class UpgradeMenu : MonoBehaviour {
 			return "Maxed";
 		}
 		switch (menuType) {
-		case UpgradeTypes.YAW:
+		case UpgradeTypes.TURN:
 			return UpgradesDB.GetTurnDescription(upgradeLevel + 1);
 		case UpgradeTypes.FOOD:
 			return UpgradesDB.GetFoodDescription(upgradeLevel + 1);

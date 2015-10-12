@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum UpgradeTypes {
-	YAW,
+	TURN,
 	FOOD,
 	COINS
 }
@@ -18,7 +18,7 @@ public class UpgradeShop : MonoBehaviour {
 	}
 
 	public void PopulateUpgrades(int _turnLevel, int _foodLevel, int _coinLevel) {
-		upgradeMenus [(int)UpgradeTypes.YAW].UpdateUI (_turnLevel);
+		upgradeMenus [(int)UpgradeTypes.TURN].UpdateUI (_turnLevel);
 		upgradeMenus [(int)UpgradeTypes.FOOD].UpdateUI (_foodLevel);
 		upgradeMenus [(int)UpgradeTypes.COINS].UpdateUI (_coinLevel);
 	}
@@ -27,7 +27,7 @@ public class UpgradeShop : MonoBehaviour {
 		Game.GameCoins -= _price;
 		audioSource.Play ();
 		switch (_upgradeType) {
-			case UpgradeTypes.YAW:
+			case UpgradeTypes.TURN:
 				Game.GetSelf().UpgradeTurn();
 				break;
 			case UpgradeTypes.FOOD:
