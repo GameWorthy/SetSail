@@ -303,7 +303,8 @@ public class Game : MonoBehaviour {
 	public void ShowMenu() {
 		CheckForUpgradeNotification ();
 
-		StartMovement (1);
+		StartMovement (LevelMetadata.GetLevelSpeed(1));
+
 		ship.Live ();
 		ship.MoveShip (0f);
 		ship.RandomizeShip ();
