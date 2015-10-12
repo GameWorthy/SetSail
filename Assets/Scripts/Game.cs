@@ -135,12 +135,7 @@ public class Game : MonoBehaviour {
 		}
 		
 		if (Input.GetKeyDown (KeyCode.R)) {
-			gameData.highScore = 0;
-			gameData.coinLevel = 0;
-			gameData.foodLevel = 0;
-			gameData.turnLevel = 0;
-			GameCoins = 0;
-			SetShipUpgradeStats();
+			ResetAllGameData ();
 		}
 
 		
@@ -307,11 +302,8 @@ public class Game : MonoBehaviour {
 
 	public void ShowMenu() {
 		CheckForUpgradeNotification ();
-		
-		currentSpeed = LevelMetadata.GetLevelSpeed (1);
-		ColorSea(LevelMetadata.GetLevelSeaColor(1));
 
-		StartMovement ();
+		StartMovement (1);
 		ship.Live ();
 		ship.MoveShip (0f);
 		ship.RandomizeShip ();
@@ -342,8 +334,12 @@ public class Game : MonoBehaviour {
 	}
 
 	private void StartMovement() {
-		SideLines.Speed = LevelMetadata.GetLevelSpeed (CurrentLevel);
-		Wave.Speed = LevelMetadata.GetLevelSpeed (CurrentLevel);
+		StartMovement(LevelMetadata.GetLevelSpeed (CurrentLevel));
+	}
+
+	private void StartMovement(int _speed) {
+		SideLines.Speed = _speed;
+		Wave.Speed = _speed;
 	}
 
 	private void StopMovement() {
@@ -392,6 +388,16 @@ public class Game : MonoBehaviour {
 			gmo.SetActive(canUpgrade);
 		}
 	}
+
+	public void ResetAllGameData () {
+		gameData.highScore = 0;
+		gameData.coinLevel = 0;
+		gameData.foodLevel = 0;
+		gameData.turnLevel = 0;
+		GameCoins = 0;
+		SetShipUpgradeStats ();
+	}
+
 }
 
 [Serializable]
