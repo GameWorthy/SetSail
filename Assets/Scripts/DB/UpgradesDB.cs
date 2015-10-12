@@ -11,11 +11,11 @@ public class UpgradesDB {
 		//index 2: upgrade_prie
 		//index 3: description
 		{0,1.0f,-1, ""},
-		{1,1.5f,100, "Remove rust from the helm."},
-		{2,2.0f,250, "Polish the hull."},
-		{3,2.7f,500, "Patch the holes in the sail, catch the wind!"},
-		{4,3.5f,1000, "Greese the helm for faster turning."},
-		{5,4.5f,2000, "Healm 9001, the best healm in the realm."}
+		{1,1.5f,50, "Remove rust from the helm."},
+		{2,2.0f,150, "Polish the hull."},
+		{3,2.7f,250, "Patch the holes in the sail, catch the wind!"},
+		{4,3.5f,400, "Greese the helm for faster turning."},
+		{5,4.5f,500, "Healm 9001, the best healm in the realm."}
 
 	};
 	
@@ -38,14 +38,14 @@ public class UpgradesDB {
 	private static object[,] foodUpgrade = new object[,] {
 		//index 0: index
 		//index 1: food_value
-		//index 2: upgrade_prie
+		//index 2: upgrade_price
 		//index 3: description
 		{0,3.0f,-1, ""},
-		{1,0.25f,100, "Extra rations."},
-		{2,0.20f,250, "Buy food crates."},
-		{3,0.15f,500, "Buy food barrels."},
-		{4,0.06f,1000, "Build a storage room."},
-		{5,0.02f,2000, "Hire a chef."}
+		{1,2.0f,150, "Extra rations."},
+		{2,1.75f,250, "Buy food crates."},
+		{3,1.25f,500, "Buy food barrels."},
+		{4,1.0f,750, "Build a storage room."},
+		{5,0.5f,1000, "Hire a chef."}
 	};
 	
 	public static float GetFoodValue(int _upgradeLevel) {
