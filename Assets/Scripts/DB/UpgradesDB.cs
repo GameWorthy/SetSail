@@ -40,12 +40,12 @@ public class UpgradesDB {
 		//index 1: food_value
 		//index 2: upgrade_price
 		//index 3: description
-		{0,4.0f,-1, ""},
-		{1,3.0f,150, "Extra rations."},
-		{2,2.5f,250, "Buy food crates."},
-		{3,2.0f,500, "Buy food barrels."},
-		{4,1.0f,750, "Build a storage room."},
-		{5,0.25f,1000, "Hire a chef."}
+		{0,5.0f,-1, ""},
+		{1,4.0f,50, "Extra rations."},
+		{2,3.5f,125, "Buy food crates."},
+		{3,3.0f,300, "Buy food barrels."},
+		{4,2.0f,550, "Build a storage room."},
+		{5,1.25f,1000, "Hire a chef."}
 	};
 	
 	public static float GetFoodValue(int _upgradeLevel) {
@@ -73,11 +73,11 @@ public class UpgradesDB {
 		//index 4: description
 		//
 		{0,999,999,-1, ""},
-		{1,4,999,100, "Double Coins Starts At Level 4."},
-		{2,3,999,250, "Double Coins Starts At Level 3."},
-		{3,3,6,500, "Triple Coins Starts At Level 6."},
-		{4,3,5,1000, "Tripple Coins Starts At Level 5."},
-		{5,2,4,2000, "Double Coins Starts At Level 2 and Triple Coins Starts At Level 4."}
+		{1,3,999,100, "Double Coins Starts At Level 3."},
+		{2,2,999,250, "Double Coins Starts At Level 2."},
+		{3,2,5,500, "Triple Coins Starts At Level 5."},
+		{4,2,4,1000, "Tripple Coins Starts At Level 4."},
+		{5,2,3,2000, "Triple Coins Starts At Level 3."}
 	};
 	
 	public static int GetDoubleCoinLevel(int _upgradeLevel) {

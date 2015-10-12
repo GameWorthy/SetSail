@@ -40,6 +40,10 @@ public class UpgradeShop : MonoBehaviour {
 		Game.Save ();
 	}
 
+	public void HideInfo() {
+		upgradeMenus [0].HideInfo ();
+	}
+
 	public bool HasUpgradesAvailable () {
 		foreach (UpgradeMenu um in upgradeMenus) {
 			if(um.CanBuy()) {

@@ -60,8 +60,11 @@ public class UpgradeMenu : MonoBehaviour {
 		}
 	}
 
-	public void ShowInfo() {
+	public void HideInfo() {
+		upgradeInfo.Hide ();
+	}
 
+	public void ShowInfo() {
 		upgradeInfo.ShowInfo (menuType.ToString(),Getdescription());
 	}
 

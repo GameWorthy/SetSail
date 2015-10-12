@@ -8,7 +8,7 @@ public class UpgradeInfo : MonoBehaviour {
 	[SerializeField] private Text upgradeInfo = null;
 	
 	void Start () {
-		Hide ();
+		//Hide ();
 	}
 
 	public void ShowInfo(string _upgradeTitle, string _upgradeInfo) {

@@ -215,6 +215,11 @@ public class Game : MonoBehaviour {
 		isTransitioning = true;
 		CurrentLevel++;
 		levelNotifier.Present (LevelMetadata.GetLevelName(CurrentLevel));
+		if (CurrentLevel == 6) {
+			levelNotifier.PlayHell ();
+		} else {
+			levelNotifier.PlayLevelUp ();
+		}
 		StartMovement ();
 		DOTween.To (() => currentSpeed, x => currentSpeed = x, LevelMetadata.GetLevelSpeed (CurrentLevel), 1f);
 		ColorSea(LevelMetadata.GetLevelSeaColor(CurrentLevel));
@@ -255,6 +260,8 @@ public class Game : MonoBehaviour {
 			gameData.highScore = (int)currentMiles;
 			menu.ActivateHighScore();
 		}
+
+		levelNotifier.StopHell ();
 		
 		//give medals
 		if (currentMiles >= 320) {
@@ -298,12 +305,18 @@ public class Game : MonoBehaviour {
 		ship.Live ();
 		ship.transform.position = new Vector3 (0,ship.transform.position.y,ship.transform.position.z);
 		ship.Refuel(50);
+
+		if (CurrentLevel == 6) {
+			levelNotifier.PlayHell ();
+		}
 	}
 
 	public void ShowMenu() {
 		CheckForUpgradeNotification ();
 
 		StartMovement (LevelMetadata.GetLevelSpeed(1));
+
+		upgradeShop.HideInfo ();
 
 		ship.Live ();
 		ship.MoveShip (0f);
