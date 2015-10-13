@@ -98,6 +98,8 @@ public class Game : MonoBehaviour {
 
 	void Start() {
 
+		Application.targetFrameRate = 60;
+
 		MemoryCard.Initiate ();
 
 		gameData = (GameData) MemoryCard.Load ("game");
