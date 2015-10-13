@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3d6e0022816a44463be8f32c0c082042
-timeCreated: 1442801257
+timeCreated: 1444710014
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,10 @@ TextureImporter:
     21300008: IslandsLevel4SpriteSheet_6
     21300010: IslandsLevel4SpriteSheet_7
     21300012: IslandsLevel4SpriteSheet_8
+    21300014: penguin
+    21300016: polar_bear
+    21300018: narwhall
+    21300020: warlus
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,6 +48,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -74,7 +79,7 @@ TextureImporter:
         width: 67
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel4SpriteSheet_4
       rect:
@@ -84,7 +89,7 @@ TextureImporter:
         width: 70
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel4SpriteSheet_5
       rect:
@@ -94,7 +99,7 @@ TextureImporter:
         width: 40
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel4SpriteSheet_6
       rect:
@@ -104,7 +109,7 @@ TextureImporter:
         width: 36
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel4SpriteSheet_7
       rect:
@@ -114,7 +119,7 @@ TextureImporter:
         width: 62
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel4SpriteSheet_8
       rect:
@@ -124,7 +129,47 @@ TextureImporter:
         width: 22
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: penguin
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 99
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: polar_bear
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 95
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: narwhall
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 76
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: warlus
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 87
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

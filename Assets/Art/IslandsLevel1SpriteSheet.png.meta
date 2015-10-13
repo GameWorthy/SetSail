@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 10ab89730926c40d1b858d21b1665c6f
-timeCreated: 1444604035
+timeCreated: 1444709872
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -15,6 +15,8 @@ TextureImporter:
     21300016: newrock_0
     21300018: croc_0
     21300020: container_1
+    21300022: croc_1
+    21300024: big_ship_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,6 +50,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -143,8 +146,8 @@ TextureImporter:
     - name: newrock_0
       rect:
         serializedVersion: 2
-        x: 106
-        y: 96
+        x: 107
+        y: 103
         width: 29
         height: 23
       alignment: 0
@@ -167,6 +170,26 @@ TextureImporter:
         y: 37
         width: 26
         height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: croc_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 104
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_ship_0
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 70
+        height: 101
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

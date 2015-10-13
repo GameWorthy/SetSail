@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 548288b1d0bf74573bd54c177afef71f
-timeCreated: 1442801227
+timeCreated: 1444709976
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,13 @@ TextureImporter:
     21300008: IslandsLevel2SpriteSheet_6
     21300010: IslandsLevel2SpriteSheet_7
     21300012: IslandsLevel2SpriteSheet_8
+    21300014: beach_umbrella
+    21300016: float
+    21300018: beach_ball
+    21300020: turtle
+    21300022: dolphin
+    21300024: whale
+    21300026: squid
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,6 +51,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -74,7 +82,7 @@ TextureImporter:
         width: 67
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel2SpriteSheet_4
       rect:
@@ -84,7 +92,7 @@ TextureImporter:
         width: 70
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel2SpriteSheet_5
       rect:
@@ -94,7 +102,7 @@ TextureImporter:
         width: 40
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel2SpriteSheet_6
       rect:
@@ -104,7 +112,7 @@ TextureImporter:
         width: 36
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel2SpriteSheet_7
       rect:
@@ -114,7 +122,7 @@ TextureImporter:
         width: 62
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel2SpriteSheet_8
       rect:
@@ -124,7 +132,77 @@ TextureImporter:
         width: 22
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: beach_umbrella
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 114
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: float
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: beach_ball
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 110
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: turtle
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 96
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dolphin
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 95
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: whale
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 40
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: squid
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 30
+        width: 33
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

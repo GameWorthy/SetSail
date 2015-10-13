@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6a8ac4e0014b94e649767d10d03b577c
-timeCreated: 1442801305
+timeCreated: 1444710049
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,9 @@ TextureImporter:
     21300008: IslandsLevel6SpriteSheet_6
     21300010: IslandsLevel6SpriteSheet_7
     21300012: IslandsLevel6SpriteSheet_8
+    21300014: hell_gate
+    21300016: hell_tiny_creature
+    21300018: hell_creature
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -44,6 +47,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -74,7 +78,7 @@ TextureImporter:
         width: 67
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel6SpriteSheet_4
       rect:
@@ -84,7 +88,7 @@ TextureImporter:
         width: 70
         height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel6SpriteSheet_5
       rect:
@@ -94,7 +98,7 @@ TextureImporter:
         width: 40
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel6SpriteSheet_6
       rect:
@@ -104,7 +108,7 @@ TextureImporter:
         width: 36
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel6SpriteSheet_7
       rect:
@@ -114,7 +118,7 @@ TextureImporter:
         width: 62
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: IslandsLevel6SpriteSheet_8
       rect:
@@ -124,7 +128,37 @@ TextureImporter:
         width: 22
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hell_gate
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 81
+        width: 78
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hell_tiny_creature
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 59
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hell_creature
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 17
+        width: 63
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
