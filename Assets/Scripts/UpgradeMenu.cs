@@ -49,7 +49,7 @@ public class UpgradeMenu : MonoBehaviour {
 
 	public bool CanBuy() {
 		int price = GetPrice ();
-		return Game.GameCoins >= price && price >= 0;
+		return Game.GameCoins >= price && price >= 0 && upgradeLevel != UpgradesDB.MAX_UPGRADE_LEVEL;
 	}
 
 	public void TryPurchase() {

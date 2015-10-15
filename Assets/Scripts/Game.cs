@@ -110,16 +110,18 @@ public class Game : MonoBehaviour {
 
 		Screen.orientation = ScreenOrientation.Portrait;
 		menuState = MenuState.MAIN_MENU;
-		ShowMenu ();
 
 		MedalSystem.Initiate ();
 		menu.UpdateMedalsText ();
 
 		coinUi.UpdateText (gameData.coins);
 		SetShipUpgradeStats ();
-
 		
 		audioSource = GetComponent<AudioSource> ();
+
+		upgradeShop.PopulateUpgrades (gameData.turnLevel, gameData.foodLevel, gameData.coinLevel);
+
+		ShowMenu ();
 
 	}
 
