@@ -267,22 +267,7 @@ public class Game : MonoBehaviour {
 
 		levelNotifier.StopHell ();
 		
-		//give medals
-		if (currentMiles >= 320) {
-			MedalSystem.TotalPlatinum++;
-			menu.SetMedalColor (new Color(203f/255f,251f/255f,1,1));
-		} else if (currentMiles >= 180) {
-			MedalSystem.TotalGold++;
-			menu.SetMedalColor (new Color(1,237f/255f,0,1));
-		} else if (currentMiles >= 100) {
-			MedalSystem.TotalSilver++;
-			menu.SetMedalColor (new Color(203f/255f,203f/255f,203f/255f,1));
-		} else if (currentMiles >= 45) {
-			MedalSystem.TotalBronze++;
-			menu.SetMedalColor (new Color(218f/255f,103f/255f,0f,1));
-		} else {
-			menu.SetMedalColor(new Color(0f,0f,0f,0f));
-		}
+		AddMedals ((int)currentMiles);
 		
 		menu.UpdateMedalsText ();
 		
@@ -303,6 +288,8 @@ public class Game : MonoBehaviour {
 		NextObstacle ();
 		//remove the recently added miles
 		gameData.totalMiles -= (int)currentMiles;
+		//remove the recently added medal
+		AddMedals ((int)currentMiles, -1);
 
 		StartMovement ();
 
@@ -416,6 +403,24 @@ public class Game : MonoBehaviour {
 		SetShipUpgradeStats ();
 	}
 
+	public void AddMedals(int _miles, int _quantityToAdd = 1) {
+		//give medals
+		if (_miles >= 600) {
+			MedalSystem.TotalPlatinum += _quantityToAdd;
+			menu.SetMedalColor (new Color(203f/255f,251f/255f,1,1));
+		} else if (_miles >= 300) {
+			MedalSystem.TotalGold += _quantityToAdd;
+			menu.SetMedalColor (new Color(1,237f/255f,0,1));
+		} else if (_miles >= 150) {
+			MedalSystem.TotalSilver += _quantityToAdd;
+			menu.SetMedalColor (new Color(203f/255f,203f/255f,203f/255f,1));
+		} else if (_miles >= 50) {
+			MedalSystem.TotalBronze += _quantityToAdd;
+			menu.SetMedalColor (new Color(218f/255f,103f/255f,0f,1));
+		} else {
+			menu.SetMedalColor(new Color(0f,0f,0f,0f));
+		}
+	}
 }
 
 [Serializable]
