@@ -5,7 +5,7 @@ using GoogleMobileAds.Api;
 public class Ads : MonoBehaviour {
 
 	private string androidAdId = "ca-app-pub-3865236618689243/3209428618";
-	private string iosAdId = 	 "a-app-pub-3865236618689243/6162895017";
+	private string iosAdId = 	 "ca-app-pub-3865236618689243/6162895017";
 	private BannerView bannerView = null;
 	private float refreshTimer = 45;
 	
