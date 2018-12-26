@@ -12,7 +12,7 @@ public class GameWorthySplashScreen : MonoBehaviour {
 	}
 
 	public void LoadNextScene() {
-		Application.LoadLevel (sceneToLoad);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
 		bg.gameObject.SetActive (false);
 	}
 }

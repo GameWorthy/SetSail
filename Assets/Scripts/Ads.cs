@@ -2,35 +2,44 @@
 using System.Collections;
 using GoogleMobileAds.Api;
 
-public class Ads : MonoBehaviour {
+public class Ads : MonoBehaviour
+{
 
-	private string androidAdId = "ca-app-pub-3865236618689243/3209428618";
-	private string iosAdId = 	 "ca-app-pub-3865236618689243/6162895017";
-	private BannerView bannerView = null;
-	private float refreshTimer = 45;
-	
-	void Start () {
+    private BannerView bannerView;
 
-		string adId = androidAdId;
-		if (Application.platform == RuntimePlatform.IPhonePlayer) {
-			adId = iosAdId;
-		}
-		
-		// Create a 320x50 banner at the top of the screen.
-		bannerView = new BannerView(
-			adId, AdSize.Banner, AdPosition.Bottom);
-		// Create an empty ad request.
-		AdRequest request = new AdRequest.Builder().Build();
-		// Load the banner with the request.
-		bannerView.LoadAd(request);
-	}
+    public void Start()
+    {
+#if UNITY_ANDROID
+        string appId = "ca-app-pub-3865236618689243~1732695417";
+#elif UNITY_IPHONE
+        string appId = "ca-app-pub-3865236618689243~4686161816";
+#else
+            string appId = "unexpected_platform";
+#endif
 
-	void Update() {
-		refreshTimer -= Time.deltaTime;
+        // Initialize the Google Mobile Ads SDK.
+        MobileAds.Initialize(appId);
 
-		if (refreshTimer < 0) {
-			bannerView.LoadAd ( new AdRequest.Builder().Build());
-			refreshTimer = 45;
-		}
-	}
+        this.RequestBanner();
+    }
+
+    private void RequestBanner()
+    {
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3865236618689243/3209428618";
+#elif UNITY_IPHONE
+        string adUnitId = "ca-app-pub-3865236618689243/6162895017";
+#else
+            string adUnitId = "unexpected_platform";
+#endif
+
+        // Create a 320x50 banner at the top of the screen.
+        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+
+        // Load the banner with the request.
+        bannerView.LoadAd(request);
+    }
 }

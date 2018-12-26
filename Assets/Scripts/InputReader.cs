@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InputReader : MonoBehaviour {
 
-	[SerializeField] private Ship ship;
+	[SerializeField] private Ship ship = null;
 
 	void Update () {
 		if (ship == null) {

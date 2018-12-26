@@ -5,11 +5,7 @@ using DG.Tweening;
 
 public class HighScoreStar : MonoBehaviour {
 	
-	[SerializeField] private Image image;
-
-	void Update () {
-
-	}
+	[SerializeField] private Image image = null;
 
 	public void Activate() {
 		image.transform.localScale = Vector3.one * 50;
